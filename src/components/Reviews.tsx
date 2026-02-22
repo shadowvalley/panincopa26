@@ -1,5 +1,6 @@
+import { useState } from "react";
 import { motion } from "framer-motion";
-import { Star } from "lucide-react";
+import { Star, ChevronDown } from "lucide-react";
 
 const ratingBreakdown = [
   { stars: 5, pct: 86 },
@@ -13,9 +14,21 @@ const reviews = [
   { name: "G. Nunes", date: "14/02/2026", text: "Álbum incrível, figurinhas de altíssima qualidade. Entrega super rápida!" },
   { name: "V. Cardoso", date: "10/02/2026", text: "Kit completo e muito bem embalado. Ideal para colecionar com a família." },
   { name: "D. Martins", date: "07/02/2026", text: "Produto original com selo de autenticidade. Recomendo demais!" },
+  { name: "R. Silva", date: "03/02/2026", text: "Meu filho adorou! As figurinhas holográficas são lindas. Já estamos quase completando." },
+  { name: "L. Ferreira", date: "28/01/2026", text: "Melhor custo-benefício que encontrei. Chegou antes do prazo, muito satisfeito!" },
+  { name: "A. Oliveira", date: "25/01/2026", text: "Qualidade premium, embalagem impecável. Comprei o kit colecionador e valeu cada centavo." },
+  { name: "M. Santos", date: "20/01/2026", text: "Já é meu terceiro álbum Panini. A qualidade só melhora a cada edição!" },
+  { name: "P. Costa", date: "15/01/2026", text: "Presente perfeito para meu sobrinho. Ele ficou muito feliz com as figurinhas especiais." },
+  { name: "C. Almeida", date: "10/01/2026", text: "Frete grátis e entrega em 3 dias. Experiência de compra excelente!" },
+  { name: "F. Pereira", date: "05/01/2026", text: "Álbum capa dura de ótima qualidade. As páginas são resistentes e bem ilustradas." },
 ];
 
+const INITIAL_COUNT = 5;
+
 const Reviews = () => {
+  const [showAll, setShowAll] = useState(false);
+  const visibleReviews = showAll ? reviews : reviews.slice(0, INITIAL_COUNT);
+
   return (
     <section className="py-16 px-4 bg-muted/40">
       <div className="max-w-3xl mx-auto">
@@ -49,7 +62,7 @@ const Reviews = () => {
         </div>
 
         <div className="space-y-3">
-          {reviews.map((review, i) => (
+          {visibleReviews.map((review, i) => (
             <motion.div
               key={review.name}
               className="bg-card rounded-2xl p-5 border border-border"
@@ -76,6 +89,16 @@ const Reviews = () => {
             </motion.div>
           ))}
         </div>
+
+        {!showAll && reviews.length > INITIAL_COUNT && (
+          <button
+            onClick={() => setShowAll(true)}
+            className="mx-auto mt-6 flex items-center gap-2 text-sm font-semibold text-primary hover:text-primary/80 transition-colors"
+          >
+            Ver mais avaliações
+            <ChevronDown className="w-4 h-4" />
+          </button>
+        )}
       </div>
     </section>
   );
