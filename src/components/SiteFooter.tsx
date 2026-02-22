@@ -15,7 +15,7 @@ const SiteFooter = () => {
           <span>·</span>
           <span className="hover:opacity-70 transition-opacity cursor-pointer">Reembolso</span>
         </div>
-        <p className="text-xs opacity-30">contato@sualojaaqui.com</p>
+        <p className="text-xs opacity-30">suporte@panini.com.br</p>
       </div>
     </footer>
   );
