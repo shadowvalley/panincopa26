@@ -4,6 +4,7 @@ import { Star, ChevronLeft, ChevronRight } from "lucide-react";
 import useEmblaCarousel from "embla-carousel-react";
 import reviewerGabriel from "@/assets/reviewer-gabriel.jpeg";
 import reviewGabrielPhoto from "@/assets/review-gabriel-photo.jpeg";
+import reviewLucas from "@/assets/review-lucas.jpeg";
 
 const ratingBreakdown = [
   { stars: 5, pct: 86 },
@@ -18,7 +19,7 @@ const reviews = [
   { name: "Vanessa Cardoso", date: "10/02/2026", text: "Presenteei meu marido no aniversário e ele amou. O kit veio muito bem embalado, com tudo lacrado e original. A gente não colecionava desde a Copa de 2014, e essa edição está muito superior em qualidade. A entrega foi rápida, chegou em 2 dias aqui em BH.", photo: reviewGabrielPhoto as string },
   { name: "Diego Martins", date: "07/02/2026", text: "Já colecionei todos os álbuns de Copa desde 2006 e posso dizer com certeza que esse é o melhor de todos. O selo de autenticidade Panini vem impresso no álbum, o que dá muita confiança. As figurinhas especiais têm um brilho diferente, muito bonitas. Recomendo sem pensar duas vezes." },
   { name: "Renata Silva", date: "03/02/2026", text: "Minha família inteira entrou na brincadeira! Compramos 3 kits e estamos fazendo um campeonato pra ver quem completa primeiro. As crianças adoram as figurinhas dos estádios novos. Só achei que podia vir mais pacotinhos no kit básico, mas no geral valeu muito a pena." },
-  { name: "Lucas Ferreira", date: "28/01/2026", text: "Pesquisei bastante antes de comprar e aqui foi o melhor preço que encontrei pro kit colecionador. Chegou antes do prazo previsto e tudo certinho. O álbum capa dura tem um acabamento premium que faz diferença. Já encomendei mais pacotinhos avulsos pra completar." },
+  { name: "Lucas Ferreira", date: "28/01/2026", text: "Sou dono de banca de jornal e comprei várias unidades pra revender e colecionar. Não me arrependi de nenhuma! Os clientes adoraram, saiu tudo muito rápido. A qualidade é impecável, o álbum capa dura tem um acabamento premium que faz toda a diferença. Já fiz mais pedidos.", photo: reviewLucas as string },
   { name: "Amanda Oliveira", date: "25/01/2026", text: "Sou professora e comprei pra usar como projeto na escola com os alunos. Eles ficaram super engajados aprendendo sobre os países e as seleções enquanto colam as figurinhas. A qualidade é excelente e o álbum aguenta bem o manuseio das crianças. Iniciativa incrível!" },
   { name: "Marcos Santos", date: "20/01/2026", text: "Terceiro álbum Panini que compro e a evolução é nítida. As figurinhas têm muito mais detalhes, as fotos dos jogadores são em alta resolução. O álbum dessa edição com 48 seleções é enorme e muito bem organizado. Perfeito pra quem leva coleção a sério." },
   { name: "Patricia Costa", date: "15/01/2026", text: "Comprei de presente pro meu sobrinho que mora em Recife. Mandei entregar direto lá e chegou em 4 dias, tudo perfeito. Ele me mandou áudio agradecendo super feliz. A embalagem protegeu bem o álbum e os pacotinhos vieram todos lacrados. Ótima experiência!" },
