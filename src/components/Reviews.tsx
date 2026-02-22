@@ -17,59 +17,62 @@ const reviews = [
 
 const Reviews = () => {
   return (
-    <section className="py-12 px-4 bg-muted/50">
+    <section className="py-16 px-4 bg-muted/40">
       <div className="max-w-3xl mx-auto">
-        <h3 className="text-2xl font-display text-center mb-6">Avaliações</h3>
+        <h2 className="text-2xl md:text-3xl font-display text-center mb-8 tracking-tight">Avaliações</h2>
 
-        <div className="flex flex-col md:flex-row items-center gap-8 mb-8">
+        <div className="flex flex-col md:flex-row items-center gap-8 mb-10">
           <div className="text-center">
-            <p className="text-5xl font-display text-foreground">4.9</p>
+            <p className="text-5xl font-display text-foreground tracking-tight">4.9</p>
             <div className="flex gap-0.5 justify-center my-2">
               {[...Array(5)].map((_, i) => (
                 <Star key={i} className="w-5 h-5 fill-gold text-gold" />
               ))}
             </div>
-            <p className="text-sm text-muted-foreground">(3.287 avaliações)</p>
+            <p className="text-xs text-muted-foreground">(3.287 avaliações)</p>
           </div>
 
           <div className="flex-1 w-full space-y-2">
             {ratingBreakdown.map((r) => (
               <div key={r.stars} className="flex items-center gap-2 text-sm">
-                <span className="w-6 text-right text-muted-foreground">{r.stars}★</span>
-                <div className="flex-1 h-2.5 bg-muted rounded-full overflow-hidden">
+                <span className="w-6 text-right text-muted-foreground text-xs">{r.stars}★</span>
+                <div className="flex-1 h-2 bg-muted rounded-full overflow-hidden">
                   <div
-                    className="h-full rounded-full bg-gold"
+                    className="h-full rounded-full bg-gold transition-all duration-700"
                     style={{ width: `${r.pct}%` }}
                   />
                 </div>
-                <span className="w-10 text-right text-muted-foreground text-xs">{r.pct}%</span>
+                <span className="w-10 text-right text-muted-foreground text-[11px]">{r.pct}%</span>
               </div>
             ))}
           </div>
         </div>
 
-        <div className="space-y-4">
+        <div className="space-y-3">
           {reviews.map((review, i) => (
             <motion.div
               key={review.name}
-              className="bg-card rounded-xl p-5"
+              className="bg-card rounded-2xl p-5 border border-border"
               style={{ boxShadow: "var(--shadow-card)" }}
               initial={{ y: 15, opacity: 0 }}
               whileInView={{ y: 0, opacity: 1 }}
               viewport={{ once: true }}
-              transition={{ delay: i * 0.1 }}
+              transition={{ delay: i * 0.08 }}
             >
               <div className="flex items-center gap-2 mb-2">
+                <div className="w-8 h-8 rounded-full bg-primary/10 flex items-center justify-center text-primary font-bold text-xs">
+                  {review.name.charAt(0)}
+                </div>
                 <span className="font-semibold text-sm">{review.name}</span>
-                <span className="text-xs text-accent font-semibold">✓ Verificado</span>
-                <span className="text-xs text-muted-foreground ml-auto">{review.date}</span>
+                <span className="text-[11px] text-accent font-semibold">✓ Verificado</span>
+                <span className="text-[11px] text-muted-foreground ml-auto">{review.date}</span>
               </div>
               <div className="flex gap-0.5 mb-2">
                 {[...Array(5)].map((_, j) => (
                   <Star key={j} className="w-3.5 h-3.5 fill-gold text-gold" />
                 ))}
               </div>
-              <p className="text-sm text-muted-foreground">{review.text}</p>
+              <p className="text-sm text-muted-foreground leading-relaxed">{review.text}</p>
             </motion.div>
           ))}
         </div>
