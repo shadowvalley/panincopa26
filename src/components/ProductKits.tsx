@@ -66,10 +66,10 @@ const KitCard = ({ kit, index }: { kit: Kit; index: number }) => (
 
     {kit.badge && (
       <div className="text-center mb-3">
-        <span className={`inline-block text-[10px] font-bold px-3 py-1 rounded-full tracking-wider ${
+        <span className={`inline-block text-[11px] font-bold px-4 py-1.5 rounded-full tracking-wider ${
           kit.badge === "MAIS VENDIDO"
-            ? "bg-primary/10 text-primary"
-            : "bg-accent/10 text-accent"
+            ? "bg-primary text-primary-foreground"
+            : "bg-accent text-accent-foreground"
         }`}>
           {kit.badge}
         </span>
