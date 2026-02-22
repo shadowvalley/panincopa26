@@ -76,31 +76,33 @@ const KitCard = ({ kit, index }: { kit: Kit; index: number }) => (
       </div>
     )}
 
-    <img
-      src={productImg}
-      alt={kit.name}
-      className="w-28 h-28 mx-auto object-cover rounded-xl mb-4"
-    />
+    <div className="overflow-hidden rounded-xl mb-5 mx-auto">
+      <img
+        src={productImg}
+        alt={kit.name}
+        className="w-full h-44 object-cover hover:scale-105 transition-transform duration-500"
+      />
+    </div>
 
-    <h3 className="text-lg font-display text-center mb-1 tracking-tight">{kit.name}</h3>
-    <p className="text-xs text-muted-foreground text-center mb-5">
-      1 Álbum Capa Dura + {kit.packs} Pacotes
+    <h3 className="text-xl font-display text-center mb-1.5 tracking-tight text-foreground">{kit.name}</h3>
+    <p className="text-xs text-muted-foreground text-center mb-6 leading-relaxed">
+      📦 1 Álbum Capa Dura + <span className="font-semibold text-foreground">{kit.packs} Pacotes</span>
     </p>
 
-    <div className="text-center mb-4">
-      <p className="text-xs text-muted-foreground line-through">{kit.originalPrice}</p>
-      <p className="text-3xl font-bold text-foreground font-display tracking-tight">{kit.price}</p>
-      <p className="text-[11px] text-muted-foreground mt-1">via PIX</p>
+    <div className="text-center mb-4 bg-muted/40 rounded-xl py-3 px-4">
+      <p className="text-xs text-muted-foreground line-through mb-0.5">{kit.originalPrice}</p>
+      <p className="text-3xl font-bold text-primary font-display tracking-tight">{kit.price}</p>
+      <p className="text-[11px] text-muted-foreground mt-1">à vista no PIX</p>
     </div>
 
-    <div className="flex items-center justify-center gap-3 text-[11px] text-muted-foreground mb-4">
-      <span>{kit.stickers} figurinhas</span>
+    <div className="flex items-center justify-center gap-3 text-xs text-muted-foreground mb-3">
+      <span className="font-medium">{kit.stickers} figurinhas</span>
       <span className="w-1 h-1 rounded-full bg-border" />
-      <span className="text-accent font-semibold">Frete Grátis</span>
+      <span className="text-accent font-bold">🚚 Frete Grátis</span>
     </div>
 
-    <p className="text-xs text-center text-accent font-semibold mb-5">
-      Economia de {kit.savings}
+    <p className="text-sm text-center text-accent font-bold mb-5">
+      💰 Economia de {kit.savings}
     </p>
 
     <button
