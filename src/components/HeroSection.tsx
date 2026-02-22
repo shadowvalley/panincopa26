@@ -71,7 +71,7 @@ const HeroSection = () => {
             Garanta seu álbum de capa dura com 30, 60 ou 90 pacotes de figurinhas inclusos.
           </p>
           <p className="text-sm font-semibold text-foreground/80 bg-card inline-block px-4 py-2 rounded-lg" style={{ boxShadow: "var(--shadow-card)" }}>
-            🔥 Apenas 5.000 unidades disponíveis para o Brasil!
+            Apenas 5.000 unidades disponíveis para o Brasil!
           </p>
         </motion.div>
 
