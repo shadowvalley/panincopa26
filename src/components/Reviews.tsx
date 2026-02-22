@@ -106,7 +106,7 @@ const Reviews = () => {
                   </div>
                   <p className="text-sm font-body text-muted-foreground leading-relaxed line-clamp-5">{review.text}</p>
                   {"photo" in review && review.photo && (
-                    <img src={review.photo as string} alt="Foto anexada" className="mt-3 rounded-xl w-full h-40 object-cover border border-border" />
+                    <img src={review.photo as string} alt="Foto anexada" loading="lazy" className="mt-3 rounded-xl w-full h-40 object-cover border border-border" />
                   )}
                 </motion.div>
               ))}
