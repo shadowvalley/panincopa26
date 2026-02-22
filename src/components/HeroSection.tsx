@@ -6,7 +6,7 @@ import productImg from "@/assets/product-album.jpg";
 import album1 from "@/assets/album-1.jpg";
 import album2 from "@/assets/album-2.webp";
 
-const images = [productImg, album1, album2];
+const images = [album2, album1, productImg];
 
 const HeroSection = () => {
   const [activeIndex, setActiveIndex] = useState(0);
