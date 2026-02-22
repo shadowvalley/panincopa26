@@ -1,10 +1,11 @@
 import { motion } from "framer-motion";
+import { BookOpen, Layers, Sparkles, Globe } from "lucide-react";
 
 const stats = [
-  { value: "112", label: "Páginas", desc: "O maior álbum já produzido" },
-  { value: "980", label: "Figurinhas", desc: "Coleção completa mais extensa" },
-  { value: "7", label: "Por Pacote", desc: "Maior chance de cromadas" },
-  { value: "48", label: "Seleções", desc: "Todas as equipes classificadas" },
+  { value: "112", label: "Páginas", desc: "O maior álbum já produzido", icon: BookOpen },
+  { value: "980", label: "Figurinhas", desc: "Coleção completa mais extensa", icon: Layers },
+  { value: "7", label: "Por Pacote", desc: "Maior chance de cromadas", icon: Sparkles },
+  { value: "48", label: "Seleções", desc: "Todas as equipes classificadas", icon: Globe },
 ];
 
 const highlights = [
@@ -28,14 +29,17 @@ const ProductFeatures = () => {
           {stats.map((stat, i) => (
             <motion.div
               key={stat.label}
-              className="bg-card rounded-2xl p-5 text-center border border-border"
+              className="bg-card rounded-2xl p-6 text-center border border-border hover:border-primary/20 transition-colors"
               style={{ boxShadow: "var(--shadow-card)" }}
               initial={{ y: 20, opacity: 0 }}
               whileInView={{ y: 0, opacity: 1 }}
               viewport={{ once: true }}
               transition={{ delay: i * 0.08 }}
             >
-              <p className="text-3xl font-display text-primary tracking-tight">{stat.value}</p>
+              <div className="w-10 h-10 rounded-xl bg-primary/10 flex items-center justify-center mx-auto mb-3">
+                <stat.icon className="w-5 h-5 text-primary" />
+              </div>
+              <p className="text-3xl font-display text-foreground tracking-tight">{stat.value}</p>
               <p className="text-sm font-semibold mt-1">{stat.label}</p>
               <p className="text-[11px] text-muted-foreground mt-1 leading-tight">{stat.desc}</p>
             </motion.div>
