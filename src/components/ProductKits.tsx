@@ -116,7 +116,7 @@ const KitCard = ({ kit, index }: { kit: Kit; index: number }) => (
 
 const ProductKits = () => {
   return (
-    <section className="py-16 px-4">
+    <section id="product-kits" className="py-16 px-4">
       <div className="max-w-4xl mx-auto">
         <h2 className="text-3xl md:text-4xl font-display text-center mb-2 tracking-tight">
           Escolha Seu Kit

@@ -1,11 +1,25 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { X } from "lucide-react";
 
 const FloatingCart = () => {
-  const [visible, setVisible] = useState(true);
+  const [visible, setVisible] = useState(false);
+  const [dismissed, setDismissed] = useState(false);
 
-  if (!visible) return null;
+  useEffect(() => {
+    const handleScroll = () => {
+      if (dismissed) return;
+      const kitsSection = document.getElementById("product-kits");
+      if (kitsSection) {
+        const rect = kitsSection.getBoundingClientRect();
+        setVisible(rect.top < window.innerHeight);
+      }
+    };
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, [dismissed]);
+
+  if (dismissed || !visible) return null;
 
   return (
     <AnimatePresence>
@@ -14,7 +28,7 @@ const FloatingCart = () => {
         style={{ background: "var(--gradient-cta)", boxShadow: "0 -2px 24px hsla(220, 75%, 50%, 0.25)" }}
         initial={{ y: 100 }}
         animate={{ y: 0 }}
-        transition={{ delay: 2, type: "spring", stiffness: 200 }}
+        transition={{ type: "spring", stiffness: 200 }}
       >
         <div className="text-primary-foreground text-sm">
           <span className="font-medium opacity-90">Kit Iniciante</span>
@@ -25,7 +39,7 @@ const FloatingCart = () => {
             COMPRAR
           </button>
           <button
-            onClick={() => setVisible(false)}
+            onClick={() => setDismissed(true)}
             className="text-primary-foreground/60 hover:text-primary-foreground transition-colors"
           >
             <X className="w-5 h-5" />
