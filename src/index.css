@@ -6,54 +6,54 @@
 
 @layer base {
   :root {
-    --background: 220 20% 97%;
-    --foreground: 222 30% 10%;
+    --background: 48 80% 96%;
+    --foreground: 220 30% 12%;
 
-    --card: 0 0% 100%;
-    --card-foreground: 222 30% 10%;
+    --card: 48 60% 99%;
+    --card-foreground: 220 30% 12%;
 
-    --popover: 0 0% 100%;
-    --popover-foreground: 222 30% 10%;
+    --popover: 48 60% 99%;
+    --popover-foreground: 220 30% 12%;
 
-    --primary: 220 75% 50%;
-    --primary-foreground: 0 0% 100%;
+    --primary: 0 78% 48%;
+    --primary-foreground: 48 90% 95%;
 
-    --secondary: 250 60% 58%;
+    --secondary: 210 70% 45%;
     --secondary-foreground: 0 0% 100%;
 
-    --muted: 220 15% 93%;
-    --muted-foreground: 220 12% 46%;
+    --muted: 48 30% 92%;
+    --muted-foreground: 220 12% 42%;
 
-    --accent: 160 65% 40%;
-    --accent-foreground: 0 0% 100%;
+    --accent: 48 95% 52%;
+    --accent-foreground: 220 30% 12%;
 
     --destructive: 0 72% 55%;
     --destructive-foreground: 0 0% 100%;
 
-    --border: 220 15% 90%;
-    --input: 220 15% 90%;
-    --ring: 220 75% 50%;
+    --border: 48 25% 88%;
+    --input: 48 25% 88%;
+    --ring: 0 78% 48%;
 
     --radius: 0.875rem;
 
-    --urgency: 0 72% 52%;
-    --urgency-foreground: 0 0% 100%;
+    --urgency: 0 78% 48%;
+    --urgency-foreground: 48 90% 95%;
 
-    --badge-discount: 0 72% 52%;
-    --badge-best: 160 65% 40%;
+    --badge-discount: 0 78% 48%;
+    --badge-best: 210 70% 45%;
 
-    --gold: 45 95% 55%;
-    --gold-light: 45 95% 72%;
+    --gold: 48 95% 52%;
+    --gold-light: 48 95% 68%;
 
-    --gradient-hero: linear-gradient(160deg, hsl(222 30% 10%) 0%, hsl(230 35% 18%) 100%);
-    --gradient-cta: linear-gradient(135deg, hsl(220 75% 48%) 0%, hsl(250 60% 58%) 100%);
-    --gradient-gold: linear-gradient(135deg, hsl(45 95% 55%) 0%, hsl(38 90% 48%) 100%);
-    --gradient-urgency: linear-gradient(90deg, hsl(0 72% 48%) 0%, hsl(15 80% 52%) 100%);
-    --gradient-surface: linear-gradient(180deg, hsl(220 20% 97%) 0%, hsl(225 18% 94%) 100%);
+    --gradient-hero: linear-gradient(160deg, hsl(220 30% 12%) 0%, hsl(210 35% 18%) 100%);
+    --gradient-cta: linear-gradient(135deg, hsl(0 78% 45%) 0%, hsl(0 72% 38%) 100%);
+    --gradient-gold: linear-gradient(135deg, hsl(48 95% 52%) 0%, hsl(42 90% 45%) 100%);
+    --gradient-urgency: linear-gradient(90deg, hsl(0 78% 45%) 0%, hsl(10 75% 50%) 100%);
+    --gradient-surface: linear-gradient(180deg, hsl(48 80% 96%) 0%, hsl(48 50% 93%) 100%);
 
-    --shadow-card: 0 1px 3px hsla(222, 30%, 10%, 0.04), 0 6px 24px hsla(222, 30%, 10%, 0.06);
-    --shadow-card-hover: 0 4px 12px hsla(222, 30%, 10%, 0.08), 0 12px 40px hsla(222, 30%, 10%, 0.1);
-    --shadow-cta: 0 4px 16px -2px hsla(220, 75%, 50%, 0.35);
+    --shadow-card: 0 1px 3px hsla(220, 30%, 12%, 0.04), 0 6px 24px hsla(220, 30%, 12%, 0.06);
+    --shadow-card-hover: 0 4px 12px hsla(220, 30%, 12%, 0.08), 0 12px 40px hsla(220, 30%, 12%, 0.1);
+    --shadow-cta: 0 4px 16px -2px hsla(0, 78%, 48%, 0.35);
 
     --sidebar-background: 0 0% 98%;
     --sidebar-foreground: 240 5.3% 26.1%;
@@ -92,7 +92,7 @@
   }
 
   .text-gradient-primary {
-    background: var(--gradient-cta);
+    background: linear-gradient(135deg, hsl(0 78% 48%), hsl(48 95% 52%));
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
