@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { Percent, Truck, ShieldCheck, Package } from "lucide-react";
+import { Percent, Truck, ShieldCheck, Package, Lock, Shield, BadgeCheck } from "lucide-react";
 
 const benefits = [
   { icon: Percent, title: "Desconto de 47%", desc: "Exclusivo de pré-venda" },
@@ -9,9 +9,9 @@ const benefits = [
 ];
 
 const trustBadges = [
-  { icon: "🔒", text: "Compra Segura" },
-  { icon: "🛡️", text: "Dados Protegidos" },
-  { icon: "✅", text: "Produto Original" },
+  { icon: Lock, text: "Compra Segura" },
+  { icon: Shield, text: "Dados Protegidos" },
+  { icon: BadgeCheck, text: "Produto Original" },
 ];
 
 const Benefits = () => {
@@ -48,7 +48,7 @@ const Benefits = () => {
         <div className="flex items-center justify-center gap-6 flex-wrap">
           {trustBadges.map((badge) => (
             <span key={badge.text} className="flex items-center gap-1.5 text-sm font-medium text-muted-foreground">
-              <span>{badge.icon}</span> {badge.text}
+              <badge.icon className="w-4 h-4" /> {badge.text}
             </span>
           ))}
         </div>
