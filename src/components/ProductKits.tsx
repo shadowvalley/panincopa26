@@ -1,6 +1,8 @@
 import { motion } from "framer-motion";
 import { Truck } from "lucide-react";
-import productImg from "@/assets/product-album.jpg";
+import kitInicianteImg from "@/assets/kit-iniciante.jpeg";
+import kitCampeaoImg from "@/assets/kit-campeao.jpeg";
+import kitColecionadorImg from "@/assets/kit-colecionador.jpeg";
 
 interface Kit {
   name: string;
@@ -12,6 +14,7 @@ interface Kit {
   savings: string;
   badge?: string;
   highlight?: boolean;
+  image: string;
 }
 
 const kits: Kit[] = [
@@ -23,6 +26,7 @@ const kits: Kit[] = [
     price: "R$ 62,90",
     discount: "-38%",
     savings: "R$ 36,34",
+    image: kitInicianteImg,
   },
   {
     name: "Kit Campeão",
@@ -34,6 +38,7 @@ const kits: Kit[] = [
     savings: "R$ 58,97",
     badge: "MAIS VENDIDO",
     highlight: true,
+    image: kitCampeaoImg,
   },
   {
     name: "Kit Colecionador",
@@ -44,6 +49,7 @@ const kits: Kit[] = [
     discount: "-38%",
     savings: "R$ 72,59",
     badge: "MELHOR CUSTO",
+    image: kitColecionadorImg,
   },
 ];
 
@@ -78,7 +84,7 @@ const KitCard = ({ kit, index }: { kit: Kit; index: number }) => (
 
     <div className="overflow-hidden rounded-xl mb-5 mx-auto">
       <img
-        src={productImg}
+        src={kit.image}
         alt={kit.name}
         className="w-full h-44 object-cover hover:scale-105 transition-transform duration-500"
       />
