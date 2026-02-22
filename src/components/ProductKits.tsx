@@ -101,15 +101,6 @@ const KitCard = ({ kit, index }: { kit: Kit; index: number }) => (
       <p className="text-[11px] text-muted-foreground mt-1">à vista no PIX</p>
     </div>
 
-    <div className="flex items-center justify-center gap-3 text-xs text-muted-foreground mb-3">
-      <span className="font-medium">{kit.stickers} figurinhas</span>
-      <span className="w-1 h-1 rounded-full bg-border" />
-      <span className="text-accent font-bold">Frete Grátis</span>
-    </div>
-
-    <p className="text-sm text-center text-accent font-bold mb-5">
-      Economia de {kit.savings}
-    </p>
 
     <button
       className="w-full py-3.5 rounded-xl font-bold text-primary-foreground text-sm tracking-wide animate-pulse-glow transition-all hover:scale-[1.02] active:scale-[0.98]"
