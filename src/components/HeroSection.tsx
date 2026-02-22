@@ -13,7 +13,7 @@ const HeroSection = () => {
         <motion.img
           src={trophyImg}
           alt="Troféu do campeonato"
-          className="w-28 h-28 mx-auto rounded-full object-cover mb-4 shadow-lg"
+          className="w-28 mx-auto object-contain mb-4 shadow-lg rounded-lg"
           initial={{ scale: 0.8, opacity: 0 }}
           animate={{ scale: 1, opacity: 1 }}
           transition={{ duration: 0.5 }}
