@@ -1,5 +1,6 @@
-import { useState } from "react";
-import { motion, AnimatePresence } from "framer-motion";
+import { useState, useCallback, useEffect } from "react";
+import { motion } from "framer-motion";
+import useEmblaCarousel from "embla-carousel-react";
 import trophyImg from "@/assets/trophy.jpg";
 import productImg from "@/assets/product-album.jpg";
 import album1 from "@/assets/album-1.jpg";
@@ -10,6 +11,23 @@ const images = [productImg, album1, album2, album3];
 
 const HeroSection = () => {
   const [activeIndex, setActiveIndex] = useState(0);
+  const [emblaRef, emblaApi] = useEmblaCarousel({ loop: true, align: "center" });
+
+  const onSelect = useCallback(() => {
+    if (!emblaApi) return;
+    setActiveIndex(emblaApi.selectedScrollSnap());
+  }, [emblaApi]);
+
+  useEffect(() => {
+    if (!emblaApi) return;
+    emblaApi.on("select", onSelect);
+    return () => { emblaApi.off("select", onSelect); };
+  }, [emblaApi, onSelect]);
+
+  const scrollTo = useCallback(
+    (index: number) => emblaApi?.scrollTo(index),
+    [emblaApi]
+  );
 
   return (
     <section className="pt-12 pb-16 px-4" style={{ background: "var(--gradient-surface)" }}>
@@ -65,39 +83,53 @@ const HeroSection = () => {
           animate={{ y: 0, opacity: 1 }}
           transition={{ duration: 0.6, delay: 0.3 }}
         >
-          <div className="relative overflow-hidden rounded-xl">
-            <AnimatePresence mode="wait">
-              <motion.img
-                key={activeIndex}
-                src={images[activeIndex]}
-                alt={`Produto ${activeIndex + 1}`}
-                className="w-full max-w-md mx-auto rounded-xl object-cover"
-                initial={{ opacity: 0, x: 40 }}
-                animate={{ opacity: 1, x: 0 }}
-                exit={{ opacity: 0, x: -40 }}
-                transition={{ duration: 0.3 }}
-              />
-            </AnimatePresence>
+          <div className="overflow-hidden rounded-xl" ref={emblaRef}>
+            <div className="flex">
+              {images.map((img, i) => (
+                <div key={i} className="flex-[0_0_100%] min-w-0 flex items-center justify-center p-2">
+                  <img
+                    src={img}
+                    alt={`Produto ${i + 1}`}
+                    className="w-full max-w-md mx-auto rounded-xl object-cover"
+                  />
+                </div>
+              ))}
+            </div>
           </div>
 
-          {/* Thumbnail strip – scrollable on mobile */}
-          <div className="flex gap-2 mt-3 overflow-x-auto pb-1 snap-x snap-mandatory scrollbar-hide">
+          {/* Thumbnails */}
+          <div className="flex gap-2 mt-3 justify-center">
             {images.map((img, i) => (
               <button
                 key={i}
-                onClick={() => setActiveIndex(i)}
-                className={`flex-shrink-0 snap-center rounded-lg overflow-hidden border-2 transition-all ${
+                onClick={() => scrollTo(i)}
+                className={`flex-shrink-0 rounded-lg overflow-hidden border-2 transition-all duration-200 ${
                   i === activeIndex
-                    ? "border-primary shadow-md"
-                    : "border-transparent opacity-60 hover:opacity-100"
+                    ? "border-primary shadow-md scale-105"
+                    : "border-transparent opacity-50 hover:opacity-80"
                 }`}
               >
                 <img
                   src={img}
                   alt={`Miniatura ${i + 1}`}
-                  className="w-16 h-16 object-cover"
+                  className="w-14 h-14 object-cover"
                 />
               </button>
+            ))}
+          </div>
+
+          {/* Dots */}
+          <div className="flex gap-1.5 justify-center mt-3">
+            {images.map((_, i) => (
+              <button
+                key={i}
+                onClick={() => scrollTo(i)}
+                className={`rounded-full transition-all duration-300 ${
+                  i === activeIndex
+                    ? "w-6 h-2 bg-primary"
+                    : "w-2 h-2 bg-muted-foreground/30"
+                }`}
+              />
             ))}
           </div>
         </motion.div>
