@@ -1,6 +1,7 @@
-import { useState } from "react";
+import { useState, useCallback, useEffect } from "react";
 import { motion } from "framer-motion";
-import { Star, ChevronRight } from "lucide-react";
+import { Star, ChevronLeft, ChevronRight } from "lucide-react";
+import useEmblaCarousel from "embla-carousel-react";
 import reviewerGabriel from "@/assets/reviewer-gabriel.jpeg";
 import reviewGabrielPhoto from "@/assets/review-gabriel-photo.jpeg";
 
@@ -25,18 +26,30 @@ const reviews = [
   { name: "Fernanda Pereira", date: "05/01/2026", text: "A capa dura faz toda a diferença pra quem quer guardar o álbum como recordação. As páginas são resistentes e não amassam fácil. Meu marido e eu estamos colecionando juntos e virou nosso programa de todo domingo à tarde. Melhor compra que fiz nos últimos meses." },
 ];
 
-const INITIAL_COUNT = 5;
-
 const Reviews = () => {
-  const [showAll, setShowAll] = useState(false);
-  const visibleReviews = showAll ? reviews : reviews.slice(0, INITIAL_COUNT);
+  const [emblaRef, emblaApi] = useEmblaCarousel({ loop: true, align: "start", slidesToScroll: 1 });
+  const [canScrollPrev, setCanScrollPrev] = useState(false);
+  const [canScrollNext, setCanScrollNext] = useState(true);
+
+  const onSelect = useCallback(() => {
+    if (!emblaApi) return;
+    setCanScrollPrev(emblaApi.canScrollPrev());
+    setCanScrollNext(emblaApi.canScrollNext());
+  }, [emblaApi]);
+
+  useEffect(() => {
+    if (!emblaApi) return;
+    onSelect();
+    emblaApi.on("select", onSelect);
+    return () => { emblaApi.off("select", onSelect); };
+  }, [emblaApi, onSelect]);
 
   return (
     <section className="py-16 px-4 bg-muted/40">
-      <div className="max-w-3xl mx-auto">
+      <div className="max-w-5xl mx-auto">
         <h2 className="text-2xl md:text-3xl font-body font-bold text-center mb-8 tracking-tight">Avaliações</h2>
 
-        <div className="flex flex-col md:flex-row items-center gap-8 mb-10">
+        <div className="flex flex-col md:flex-row items-center gap-8 mb-10 max-w-3xl mx-auto">
           <div className="text-center">
             <p className="text-5xl font-body font-bold text-foreground tracking-tight">4.9</p>
             <div className="flex gap-0.5 justify-center my-2">
@@ -63,51 +76,58 @@ const Reviews = () => {
           </div>
         </div>
 
-        <div className="space-y-3">
-          {visibleReviews.map((review, i) => (
-            <motion.div
-              key={review.name}
-              className="bg-card rounded-2xl p-5 border border-border"
-              style={{ boxShadow: "var(--shadow-card)" }}
-              initial={{ y: 15, opacity: 0 }}
-              whileInView={{ y: 0, opacity: 1 }}
-              viewport={{ once: true }}
-              transition={{ delay: i * 0.08 }}
-            >
-              <div className="flex items-center gap-2 mb-2">
-                {"avatar" in review && review.avatar ? (
-                  <img src={review.avatar as string} alt={review.name} className="w-8 h-8 rounded-full object-cover" />
-                ) : (
-                  <div className="w-8 h-8 rounded-full bg-primary/10 flex items-center justify-center text-primary font-bold text-xs">
-                    {review.name.charAt(0)}
+        <div className="relative">
+          <div className="overflow-hidden" ref={emblaRef}>
+            <div className="flex gap-4">
+              {reviews.map((review, i) => (
+                <motion.div
+                  key={review.name}
+                  className="bg-card rounded-2xl p-5 border border-border flex-[0_0_85%] md:flex-[0_0_45%] lg:flex-[0_0_32%] min-w-0"
+                  style={{ boxShadow: "var(--shadow-card)" }}
+                  initial={{ opacity: 0 }}
+                  whileInView={{ opacity: 1 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: i * 0.05 }}
+                >
+                  <div className="flex items-center gap-2 mb-2">
+                    <div className="w-8 h-8 rounded-full bg-primary/10 flex items-center justify-center text-primary font-bold text-xs shrink-0">
+                      {review.name.charAt(0)}
+                    </div>
+                    <span className="font-body font-semibold text-sm">{review.name}</span>
+                    <span className="text-[11px] text-accent font-semibold">✓ Verificado</span>
                   </div>
-                )}
-                <span className="font-body font-semibold text-sm">{review.name}</span>
-                <span className="text-[11px] text-accent font-semibold">✓ Verificado</span>
-                <span className="text-[11px] text-muted-foreground ml-auto">{review.date}</span>
-              </div>
-              <div className="flex gap-0.5 mb-2">
-                {[...Array(5)].map((_, j) => (
-                  <Star key={j} className="w-3.5 h-3.5 fill-gold text-gold" />
-                ))}
-              </div>
-              <p className="text-sm font-body text-muted-foreground leading-relaxed">{review.text}</p>
-              {"photo" in review && review.photo && (
-                <img src={review.photo as string} alt="Foto anexada" className="mt-3 rounded-xl w-full max-w-xs object-cover border border-border" />
-              )}
-            </motion.div>
-          ))}
-        </div>
+                  <div className="flex items-center gap-2 mb-2">
+                    <div className="flex gap-0.5">
+                      {[...Array(5)].map((_, j) => (
+                        <Star key={j} className="w-3.5 h-3.5 fill-gold text-gold" />
+                      ))}
+                    </div>
+                    <span className="text-[11px] text-muted-foreground">{review.date}</span>
+                  </div>
+                  <p className="text-sm font-body text-muted-foreground leading-relaxed line-clamp-5">{review.text}</p>
+                  {"photo" in review && review.photo && (
+                    <img src={review.photo as string} alt="Foto anexada" className="mt-3 rounded-xl w-full h-40 object-cover border border-border" />
+                  )}
+                </motion.div>
+              ))}
+            </div>
+          </div>
 
-        {!showAll && reviews.length > INITIAL_COUNT && (
           <button
-            onClick={() => setShowAll(true)}
-            className="mx-auto mt-6 flex items-center gap-2 text-sm font-semibold text-primary hover:text-primary/80 transition-colors"
+            onClick={() => emblaApi?.scrollPrev()}
+            disabled={!canScrollPrev}
+            className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-3 w-9 h-9 rounded-full bg-card border border-border flex items-center justify-center shadow-md disabled:opacity-30 transition-opacity hover:bg-muted"
           >
-            Ver mais avaliações
+            <ChevronLeft className="w-4 h-4" />
+          </button>
+          <button
+            onClick={() => emblaApi?.scrollNext()}
+            disabled={!canScrollNext}
+            className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-3 w-9 h-9 rounded-full bg-card border border-border flex items-center justify-center shadow-md disabled:opacity-30 transition-opacity hover:bg-muted"
+          >
             <ChevronRight className="w-4 h-4" />
           </button>
-        )}
+        </div>
       </div>
     </section>
   );
