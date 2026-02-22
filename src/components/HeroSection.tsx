@@ -6,9 +6,6 @@ const HeroSection = () => {
   return (
     <section className="py-10 px-4">
       <div className="max-w-2xl mx-auto text-center">
-        <div className="inline-block px-4 py-1.5 rounded-full bg-foreground text-primary-foreground text-xs font-semibold tracking-widest uppercase mb-6">
-          Compra Única por CPF
-        </div>
 
         <motion.img
           src={trophyImg}

@@ -1,4 +1,3 @@
-import UrgencyBar from "@/components/UrgencyBar";
 import HeroSection from "@/components/HeroSection";
 import ProductKits from "@/components/ProductKits";
 import ProductFeatures from "@/components/ProductFeatures";
@@ -11,7 +10,6 @@ import FloatingCart from "@/components/FloatingCart";
 const Index = () => {
   return (
     <div className="min-h-screen bg-background">
-      <UrgencyBar />
       <HeroSection />
       <ProductKits />
       <ProductFeatures />
