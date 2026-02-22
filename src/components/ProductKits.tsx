@@ -129,9 +129,14 @@ const ProductKits = () => {
           ))}
         </div>
 
-        <div className="flex items-center justify-center gap-2 text-accent font-semibold text-sm mt-8">
-          <Truck className="w-4 h-4" />
-          Frete Grátis para Todo Brasil
+        <div className="mt-10 bg-muted/50 rounded-2xl p-6 text-center border border-border">
+          <div className="flex items-center justify-center gap-3 mb-2">
+            <Truck className="w-6 h-6 text-primary" />
+            <span className="text-lg md:text-xl font-display font-bold tracking-tight text-foreground">Frete Grátis para Todo o Brasil</span>
+          </div>
+          <p className="text-sm text-muted-foreground max-w-md mx-auto leading-relaxed">
+            Enviamos para todas as capitais e regiões do país com rastreamento completo. Receba seu kit com segurança e sem custo adicional.
+          </p>
         </div>
       </div>
     </section>
