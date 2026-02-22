@@ -1,7 +1,10 @@
+import paniniLogo from "@/assets/panini-logo.jpeg";
+
 const SiteFooter = () => {
   return (
     <footer className="py-8 px-4 bg-foreground text-primary-foreground">
-      <div className="max-w-2xl mx-auto text-center space-y-3">
+      <div className="max-w-2xl mx-auto text-center space-y-4">
+        <img src={paniniLogo} alt="Logo do revendedor" className="h-12 mx-auto object-contain" />
         <p className="text-sm opacity-70">
           © 2026 Loja de Colecionáveis. Todos os direitos reservados.
         </p>
