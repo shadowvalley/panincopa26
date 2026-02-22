@@ -2,6 +2,7 @@ import { useState } from "react";
 import { motion } from "framer-motion";
 import { Star, ChevronRight } from "lucide-react";
 import reviewerGabriel from "@/assets/reviewer-gabriel.jpeg";
+import reviewGabrielPhoto from "@/assets/review-gabriel-photo.jpeg";
 
 const ratingBreakdown = [
   { stars: 5, pct: 86 },
@@ -12,7 +13,7 @@ const ratingBreakdown = [
 ];
 
 const reviews = [
-  { name: "Gabriel Nunes", date: "14/02/2026", text: "Comprei o kit completo pra colecionar com meu filho de 9 anos. Ele ficou maluco quando viu as figurinhas holográficas dos jogadores do Brasil. A qualidade do álbum é impressionante, as páginas são grossas e bem coloridas. Já estamos com quase 60% completo, trocando figurinhas repetidas na escola dele.", avatar: reviewerGabriel as string },
+  { name: "Gabriel Nunes", date: "14/02/2026", text: "Comprei o kit completo pra colecionar com meu filho de 9 anos. Ele ficou maluco quando viu as figurinhas holográficas dos jogadores do Brasil. A qualidade do álbum é impressionante, as páginas são grossas e bem coloridas. Já estamos com quase 60% completo, trocando figurinhas repetidas na escola dele.", avatar: reviewerGabriel as string, photo: reviewGabrielPhoto as string },
   { name: "Vanessa Cardoso", date: "10/02/2026", text: "Presenteei meu marido no aniversário e ele amou. O kit veio muito bem embalado, com tudo lacrado e original. A gente não colecionava desde a Copa de 2014, e essa edição está muito superior em qualidade. A entrega foi rápida, chegou em 2 dias aqui em BH." },
   { name: "Diego Martins", date: "07/02/2026", text: "Já colecionei todos os álbuns de Copa desde 2006 e posso dizer com certeza que esse é o melhor de todos. O selo de autenticidade Panini vem impresso no álbum, o que dá muita confiança. As figurinhas especiais têm um brilho diferente, muito bonitas. Recomendo sem pensar duas vezes." },
   { name: "Renata Silva", date: "03/02/2026", text: "Minha família inteira entrou na brincadeira! Compramos 3 kits e estamos fazendo um campeonato pra ver quem completa primeiro. As crianças adoram as figurinhas dos estádios novos. Só achei que podia vir mais pacotinhos no kit básico, mas no geral valeu muito a pena." },
@@ -91,6 +92,9 @@ const Reviews = () => {
                 ))}
               </div>
               <p className="text-sm font-body text-muted-foreground leading-relaxed">{review.text}</p>
+              {"photo" in review && review.photo && (
+                <img src={review.photo as string} alt="Foto anexada" className="mt-3 rounded-xl w-full max-w-xs object-cover border border-border" />
+              )}
             </motion.div>
           ))}
         </div>
