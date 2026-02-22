@@ -5,6 +5,7 @@ import useEmblaCarousel from "embla-carousel-react";
 import reviewerGabriel from "@/assets/reviewer-gabriel.jpeg";
 import reviewGabrielPhoto from "@/assets/review-gabriel-photo.jpeg";
 import reviewLucas from "@/assets/review-lucas.jpeg";
+import reviewPatricia from "@/assets/review-patricia.jpeg";
 
 const ratingBreakdown = [
   { stars: 5, pct: 86 },
@@ -22,7 +23,7 @@ const reviews = [
   { name: "Lucas Ferreira", date: "28/01/2026", text: "Sou dono de banca de jornal e comprei várias unidades pra revender e colecionar. Não me arrependi de nenhuma! Os clientes adoraram, saiu tudo muito rápido. A qualidade é impecável, o álbum capa dura tem um acabamento premium que faz toda a diferença. Já fiz mais pedidos.", photo: reviewLucas as string },
   { name: "Amanda Oliveira", date: "25/01/2026", text: "Sou professora e comprei pra usar como projeto na escola com os alunos. Eles ficaram super engajados aprendendo sobre os países e as seleções enquanto colam as figurinhas. A qualidade é excelente e o álbum aguenta bem o manuseio das crianças. Iniciativa incrível!" },
   { name: "Marcos Santos", date: "20/01/2026", text: "Terceiro álbum Panini que compro e a evolução é nítida. As figurinhas têm muito mais detalhes, as fotos dos jogadores são em alta resolução. O álbum dessa edição com 48 seleções é enorme e muito bem organizado. Perfeito pra quem leva coleção a sério." },
-  { name: "Patricia Costa", date: "15/01/2026", text: "Comprei de presente pro meu sobrinho que mora em Recife. Mandei entregar direto lá e chegou em 4 dias, tudo perfeito. Ele me mandou áudio agradecendo super feliz. A embalagem protegeu bem o álbum e os pacotinhos vieram todos lacrados. Ótima experiência!" },
+  { name: "Patricia Costa", date: "15/01/2026", text: "Comprei de presente pro meu sobrinho que mora em Recife. Mandei entregar direto lá e chegou em 4 dias, tudo perfeito. Ele me mandou áudio agradecendo super feliz. A embalagem protegeu bem o álbum e os pacotinhos vieram todos lacrados. Ótima experiência!", photo: reviewPatricia as string },
   { name: "Carlos Almeida", date: "10/01/2026", text: "O frete grátis foi decisivo na minha compra. Moro em Manaus e normalmente pago caro em frete, mas aqui chegou sem custo nenhum e em tempo razoável. O produto é original, sem nenhum defeito. Já indiquei pros colegas do trabalho e dois deles já compraram também." },
   { name: "Fernanda Pereira", date: "05/01/2026", text: "A capa dura faz toda a diferença pra quem quer guardar o álbum como recordação. As páginas são resistentes e não amassam fácil. Meu marido e eu estamos colecionando juntos e virou nosso programa de todo domingo à tarde. Melhor compra que fiz nos últimos meses." },
 ];
