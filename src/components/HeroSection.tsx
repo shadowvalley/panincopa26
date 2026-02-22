@@ -1,5 +1,6 @@
 import { useState, useCallback, useEffect } from "react";
 import { motion } from "framer-motion";
+import { ChevronLeft, ChevronRight } from "lucide-react";
 import useEmblaCarousel from "embla-carousel-react";
 import trophyImg from "@/assets/trophy.png";
 import productImg from "@/assets/product-album.jpg";
@@ -82,18 +83,34 @@ const HeroSection = () => {
           animate={{ y: 0, opacity: 1 }}
           transition={{ duration: 0.6, delay: 0.3 }}
         >
-          <div className="overflow-hidden rounded-xl" ref={emblaRef}>
-            <div className="flex">
-              {images.map((img, i) => (
-                <div key={i} className="flex-[0_0_100%] min-w-0 flex items-center justify-center p-2">
-                  <img
-                    src={img}
-                    alt={`Produto ${i + 1}`}
-                    className="w-full max-w-md mx-auto rounded-xl object-cover"
-                  />
-                </div>
-              ))}
+          <div className="relative">
+            <div className="overflow-hidden rounded-xl" ref={emblaRef}>
+              <div className="flex">
+                {images.map((img, i) => (
+                  <div key={i} className="flex-[0_0_100%] min-w-0 flex items-center justify-center p-2">
+                    <img
+                      src={img}
+                      alt={`Produto ${i + 1}`}
+                      className="w-full max-w-md mx-auto rounded-xl object-cover"
+                    />
+                  </div>
+                ))}
+              </div>
             </div>
+            <button
+              onClick={() => emblaApi?.scrollPrev()}
+              className="absolute left-2 top-1/2 -translate-y-1/2 w-9 h-9 rounded-full bg-card/80 backdrop-blur border border-border flex items-center justify-center shadow-md transition-opacity hover:bg-card"
+              aria-label="Anterior"
+            >
+              <ChevronLeft className="w-5 h-5" />
+            </button>
+            <button
+              onClick={() => emblaApi?.scrollNext()}
+              className="absolute right-2 top-1/2 -translate-y-1/2 w-9 h-9 rounded-full bg-card/80 backdrop-blur border border-border flex items-center justify-center shadow-md transition-opacity hover:bg-card"
+              aria-label="Próximo"
+            >
+              <ChevronRight className="w-5 h-5" />
+            </button>
           </div>
 
           {/* Thumbnails */}
