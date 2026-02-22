@@ -35,6 +35,8 @@ const HeroSection = () => {
         <motion.img
           src={trophyImg}
           alt="Troféu do campeonato"
+          loading="eager"
+          decoding="async"
           className="w-24 mx-auto object-contain mb-6 drop-shadow-xl"
           initial={{ scale: 0.8, opacity: 0 }}
           animate={{ scale: 1, opacity: 1 }}
@@ -91,6 +93,8 @@ const HeroSection = () => {
                     <img
                       src={img}
                       alt={`Produto ${i + 1}`}
+                      loading={i === 0 ? "eager" : "lazy"}
+                      decoding="async"
                       className="w-full max-w-md mx-auto rounded-xl object-cover"
                     />
                   </div>
