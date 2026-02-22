@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import { Truck } from "lucide-react";
 import productImg from "@/assets/product-album.jpg";
 
 interface Kit {
@@ -128,9 +129,10 @@ const ProductKits = () => {
           ))}
         </div>
 
-        <p className="text-center text-accent font-semibold text-sm mt-8">
-          🚚 Frete Grátis para Todo Brasil
-        </p>
+        <div className="flex items-center justify-center gap-2 text-accent font-semibold text-sm mt-8">
+          <Truck className="w-4 h-4" />
+          Frete Grátis para Todo Brasil
+        </div>
       </div>
     </section>
   );
