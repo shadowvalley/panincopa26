@@ -11,16 +11,16 @@ const ratingBreakdown = [
 ];
 
 const reviews = [
-  { name: "G. Nunes", date: "14/02/2026", text: "Álbum incrível, figurinhas de altíssima qualidade. Entrega super rápida!" },
-  { name: "V. Cardoso", date: "10/02/2026", text: "Kit completo e muito bem embalado. Ideal para colecionar com a família." },
-  { name: "D. Martins", date: "07/02/2026", text: "Produto original com selo de autenticidade. Recomendo demais!" },
-  { name: "R. Silva", date: "03/02/2026", text: "Meu filho adorou! As figurinhas holográficas são lindas. Já estamos quase completando." },
-  { name: "L. Ferreira", date: "28/01/2026", text: "Melhor custo-benefício que encontrei. Chegou antes do prazo, muito satisfeito!" },
-  { name: "A. Oliveira", date: "25/01/2026", text: "Qualidade premium, embalagem impecável. Comprei o kit colecionador e valeu cada centavo." },
-  { name: "M. Santos", date: "20/01/2026", text: "Já é meu terceiro álbum Panini. A qualidade só melhora a cada edição!" },
-  { name: "P. Costa", date: "15/01/2026", text: "Presente perfeito para meu sobrinho. Ele ficou muito feliz com as figurinhas especiais." },
-  { name: "C. Almeida", date: "10/01/2026", text: "Frete grátis e entrega em 3 dias. Experiência de compra excelente!" },
-  { name: "F. Pereira", date: "05/01/2026", text: "Álbum capa dura de ótima qualidade. As páginas são resistentes e bem ilustradas." },
+  { name: "Gabriel Nunes", date: "14/02/2026", text: "Comprei o kit completo pra colecionar com meu filho de 9 anos. Ele ficou maluco quando viu as figurinhas holográficas dos jogadores do Brasil. A qualidade do álbum é impressionante, as páginas são grossas e bem coloridas. Já estamos com quase 60% completo, trocando figurinhas repetidas na escola dele." },
+  { name: "Vanessa Cardoso", date: "10/02/2026", text: "Presenteei meu marido no aniversário e ele amou. O kit veio muito bem embalado, com tudo lacrado e original. A gente não colecionava desde a Copa de 2014, e essa edição está muito superior em qualidade. A entrega foi rápida, chegou em 2 dias aqui em BH." },
+  { name: "Diego Martins", date: "07/02/2026", text: "Já colecionei todos os álbuns de Copa desde 2006 e posso dizer com certeza que esse é o melhor de todos. O selo de autenticidade Panini vem impresso no álbum, o que dá muita confiança. As figurinhas especiais têm um brilho diferente, muito bonitas. Recomendo sem pensar duas vezes." },
+  { name: "Renata Silva", date: "03/02/2026", text: "Minha família inteira entrou na brincadeira! Compramos 3 kits e estamos fazendo um campeonato pra ver quem completa primeiro. As crianças adoram as figurinhas dos estádios novos. Só achei que podia vir mais pacotinhos no kit básico, mas no geral valeu muito a pena." },
+  { name: "Lucas Ferreira", date: "28/01/2026", text: "Pesquisei bastante antes de comprar e aqui foi o melhor preço que encontrei pro kit colecionador. Chegou antes do prazo previsto e tudo certinho. O álbum capa dura tem um acabamento premium que faz diferença. Já encomendei mais pacotinhos avulsos pra completar." },
+  { name: "Amanda Oliveira", date: "25/01/2026", text: "Sou professora e comprei pra usar como projeto na escola com os alunos. Eles ficaram super engajados aprendendo sobre os países e as seleções enquanto colam as figurinhas. A qualidade é excelente e o álbum aguenta bem o manuseio das crianças. Iniciativa incrível!" },
+  { name: "Marcos Santos", date: "20/01/2026", text: "Terceiro álbum Panini que compro e a evolução é nítida. As figurinhas têm muito mais detalhes, as fotos dos jogadores são em alta resolução. O álbum dessa edição com 48 seleções é enorme e muito bem organizado. Perfeito pra quem leva coleção a sério." },
+  { name: "Patricia Costa", date: "15/01/2026", text: "Comprei de presente pro meu sobrinho que mora em Recife. Mandei entregar direto lá e chegou em 4 dias, tudo perfeito. Ele me mandou áudio agradecendo super feliz. A embalagem protegeu bem o álbum e os pacotinhos vieram todos lacrados. Ótima experiência!" },
+  { name: "Carlos Almeida", date: "10/01/2026", text: "O frete grátis foi decisivo na minha compra. Moro em Manaus e normalmente pago caro em frete, mas aqui chegou sem custo nenhum e em tempo razoável. O produto é original, sem nenhum defeito. Já indiquei pros colegas do trabalho e dois deles já compraram também." },
+  { name: "Fernanda Pereira", date: "05/01/2026", text: "A capa dura faz toda a diferença pra quem quer guardar o álbum como recordação. As páginas são resistentes e não amassam fácil. Meu marido e eu estamos colecionando juntos e virou nosso programa de todo domingo à tarde. Melhor compra que fiz nos últimos meses." },
 ];
 
 const INITIAL_COUNT = 5;
@@ -32,11 +32,11 @@ const Reviews = () => {
   return (
     <section className="py-16 px-4 bg-muted/40">
       <div className="max-w-3xl mx-auto">
-        <h2 className="text-2xl md:text-3xl font-display text-center mb-8 tracking-tight">Avaliações</h2>
+        <h2 className="text-2xl md:text-3xl font-body font-bold text-center mb-8 tracking-tight">Avaliações</h2>
 
         <div className="flex flex-col md:flex-row items-center gap-8 mb-10">
           <div className="text-center">
-            <p className="text-5xl font-display text-foreground tracking-tight">4.9</p>
+            <p className="text-5xl font-body font-bold text-foreground tracking-tight">4.9</p>
             <div className="flex gap-0.5 justify-center my-2">
               {[...Array(5)].map((_, i) => (
                 <Star key={i} className="w-5 h-5 fill-gold text-gold" />
@@ -76,7 +76,7 @@ const Reviews = () => {
                 <div className="w-8 h-8 rounded-full bg-primary/10 flex items-center justify-center text-primary font-bold text-xs">
                   {review.name.charAt(0)}
                 </div>
-                <span className="font-semibold text-sm">{review.name}</span>
+                <span className="font-body font-semibold text-sm">{review.name}</span>
                 <span className="text-[11px] text-accent font-semibold">✓ Verificado</span>
                 <span className="text-[11px] text-muted-foreground ml-auto">{review.date}</span>
               </div>
@@ -85,7 +85,7 @@ const Reviews = () => {
                   <Star key={j} className="w-3.5 h-3.5 fill-gold text-gold" />
                 ))}
               </div>
-              <p className="text-sm text-muted-foreground leading-relaxed">{review.text}</p>
+              <p className="text-sm font-body text-muted-foreground leading-relaxed">{review.text}</p>
             </motion.div>
           ))}
         </div>
