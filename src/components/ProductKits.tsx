@@ -86,6 +86,7 @@ const KitCard = ({ kit, index }: { kit: Kit; index: number }) => (
       <img
         src={kit.image}
         alt={kit.name}
+        loading="lazy"
         className="w-full h-44 object-cover hover:scale-105 transition-transform duration-500"
       />
     </div>

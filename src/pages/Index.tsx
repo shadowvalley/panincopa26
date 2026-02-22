@@ -1,23 +1,27 @@
+import { lazy, Suspense } from "react";
 import HeroSection from "@/components/HeroSection";
-import ProductKits from "@/components/ProductKits";
-import ProductFeatures from "@/components/ProductFeatures";
-import Benefits from "@/components/Benefits";
-import Reviews from "@/components/Reviews";
-import FAQ from "@/components/FAQ";
-import SiteFooter from "@/components/SiteFooter";
-import FloatingCart from "@/components/FloatingCart";
+
+const ProductKits = lazy(() => import("@/components/ProductKits"));
+const ProductFeatures = lazy(() => import("@/components/ProductFeatures"));
+const Benefits = lazy(() => import("@/components/Benefits"));
+const Reviews = lazy(() => import("@/components/Reviews"));
+const FAQ = lazy(() => import("@/components/FAQ"));
+const SiteFooter = lazy(() => import("@/components/SiteFooter"));
+const FloatingCart = lazy(() => import("@/components/FloatingCart"));
 
 const Index = () => {
   return (
     <div className="min-h-screen bg-background">
       <HeroSection />
-      <ProductKits />
-      <ProductFeatures />
-      <Benefits />
-      <Reviews />
-      <FAQ />
-      <SiteFooter />
-      <FloatingCart />
+      <Suspense fallback={null}>
+        <ProductKits />
+        <ProductFeatures />
+        <Benefits />
+        <Reviews />
+        <FAQ />
+        <SiteFooter />
+        <FloatingCart />
+      </Suspense>
     </div>
   );
 };
