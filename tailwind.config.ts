@@ -14,8 +14,8 @@ export default {
     },
     extend: {
       fontFamily: {
-        sans: ['Inter', 'sans-serif'],
-        display: ['Bebas Neue', 'Inter', 'sans-serif'],
+        sans: ['DM Sans', 'system-ui', 'sans-serif'],
+        display: ['Space Grotesk', 'DM Sans', 'sans-serif'],
       },
       colors: {
         border: "hsl(var(--border))",
@@ -85,12 +85,16 @@ export default {
           to: { height: "0" },
         },
         "pulse-glow": {
-          "0%, 100%": { boxShadow: "0 0 0 0 hsla(15, 90%, 55%, 0.4)" },
-          "50%": { boxShadow: "0 0 0 12px hsla(15, 90%, 55%, 0)" },
+          "0%, 100%": { boxShadow: "0 0 0 0 hsla(220, 75%, 50%, 0.4)" },
+          "50%": { boxShadow: "0 0 0 14px hsla(220, 75%, 50%, 0)" },
         },
         "count-down": {
           "0%": { transform: "translateY(-100%)", opacity: "0" },
           "100%": { transform: "translateY(0)", opacity: "1" },
+        },
+        "shimmer": {
+          "0%": { backgroundPosition: "-200% 0" },
+          "100%": { backgroundPosition: "200% 0" },
         },
       },
       animation: {
@@ -98,6 +102,7 @@ export default {
         "accordion-up": "accordion-up 0.2s ease-out",
         "pulse-glow": "pulse-glow 2s infinite",
         "count-down": "count-down 0.3s ease-out",
+        "shimmer": "shimmer 3s linear infinite",
       },
     },
   },

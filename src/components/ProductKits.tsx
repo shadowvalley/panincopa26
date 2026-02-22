@@ -10,7 +10,6 @@ interface Kit {
   discount: string;
   savings: string;
   badge?: string;
-  badgeColor?: string;
   highlight?: boolean;
 }
 
@@ -49,26 +48,27 @@ const kits: Kit[] = [
 
 const KitCard = ({ kit, index }: { kit: Kit; index: number }) => (
   <motion.div
-    className={`relative rounded-2xl p-6 transition-all duration-300 ${
+    className={`relative rounded-2xl p-6 transition-all duration-300 border ${
       kit.highlight
-        ? "bg-card ring-2 ring-primary shadow-lg scale-[1.02]"
-        : "bg-card shadow-md hover:shadow-lg"
+        ? "bg-card border-primary/30 shadow-xl scale-[1.03]"
+        : "bg-card border-border hover:border-primary/20 hover:shadow-lg"
     }`}
-    style={{ boxShadow: "var(--shadow-card)" }}
+    style={{ boxShadow: kit.highlight ? "var(--shadow-card-hover)" : "var(--shadow-card)" }}
     initial={{ y: 30, opacity: 0 }}
     whileInView={{ y: 0, opacity: 1 }}
     viewport={{ once: true }}
     transition={{ duration: 0.4, delay: index * 0.1 }}
   >
-    {/* Discount badge */}
-    <div className="absolute -top-3 -right-3 bg-urgency text-urgency-foreground text-xs font-bold px-3 py-1.5 rounded-full">
+    <div className="absolute -top-3 -right-3 text-xs font-bold px-3 py-1.5 rounded-full text-destructive-foreground" style={{ background: "var(--gradient-urgency)" }}>
       {kit.discount}
     </div>
 
     {kit.badge && (
-      <div className={`text-center mb-3`}>
-        <span className={`inline-block text-xs font-bold px-3 py-1 rounded-full ${
-          kit.badge === "MAIS VENDIDO" ? "bg-primary text-primary-foreground" : "bg-accent text-accent-foreground"
+      <div className="text-center mb-3">
+        <span className={`inline-block text-[10px] font-bold px-3 py-1 rounded-full tracking-wider ${
+          kit.badge === "MAIS VENDIDO"
+            ? "bg-primary/10 text-primary"
+            : "bg-accent/10 text-accent"
         }`}>
           {kit.badge}
         </span>
@@ -78,57 +78,57 @@ const KitCard = ({ kit, index }: { kit: Kit; index: number }) => (
     <img
       src={productImg}
       alt={kit.name}
-      className="w-32 h-32 mx-auto object-cover rounded-xl mb-4"
+      className="w-28 h-28 mx-auto object-cover rounded-xl mb-4"
     />
 
-    <h3 className="text-xl font-display text-center mb-1">{kit.name}</h3>
-    <p className="text-sm text-muted-foreground text-center mb-4">
+    <h3 className="text-lg font-display text-center mb-1 tracking-tight">{kit.name}</h3>
+    <p className="text-xs text-muted-foreground text-center mb-5">
       1 Álbum Capa Dura + {kit.packs} Pacotes
     </p>
 
     <div className="text-center mb-4">
-      <p className="text-sm text-muted-foreground line-through">{kit.originalPrice}</p>
-      <p className="text-3xl font-bold text-foreground font-display">{kit.price}</p>
-      <p className="text-xs text-muted-foreground">via PIX</p>
+      <p className="text-xs text-muted-foreground line-through">{kit.originalPrice}</p>
+      <p className="text-3xl font-bold text-foreground font-display tracking-tight">{kit.price}</p>
+      <p className="text-[11px] text-muted-foreground mt-1">via PIX</p>
     </div>
 
-    <div className="flex items-center justify-center gap-3 text-xs text-muted-foreground mb-4">
+    <div className="flex items-center justify-center gap-3 text-[11px] text-muted-foreground mb-4">
       <span>{kit.stickers} figurinhas</span>
+      <span className="w-1 h-1 rounded-full bg-border" />
       <span className="text-accent font-semibold">Frete Grátis</span>
     </div>
 
-    <p className="text-xs text-center text-accent font-semibold mb-4">
+    <p className="text-xs text-center text-accent font-semibold mb-5">
       Economia de {kit.savings}
     </p>
 
     <button
-      className="w-full py-3.5 rounded-xl font-bold text-primary-foreground text-sm tracking-wide animate-pulse-glow transition-transform hover:scale-[1.02] active:scale-[0.98]"
+      className="w-full py-3.5 rounded-xl font-bold text-primary-foreground text-sm tracking-wide animate-pulse-glow transition-all hover:scale-[1.02] active:scale-[0.98]"
       style={{ background: "var(--gradient-cta)", boxShadow: "var(--shadow-cta)" }}
     >
-      GARANTIR MEU KIT AGORA
+      GARANTIR MEU KIT
     </button>
   </motion.div>
 );
 
 const ProductKits = () => {
   return (
-    <section className="py-12 px-4">
+    <section className="py-16 px-4">
       <div className="max-w-4xl mx-auto">
-        <h2 className="text-3xl md:text-4xl font-display text-center mb-3">
-          Kits Disponíveis — Álbum Copa 2026
+        <h2 className="text-3xl md:text-4xl font-display text-center mb-2 tracking-tight">
+          Escolha Seu Kit
         </h2>
-        <p className="text-center text-muted-foreground mb-10 max-w-xl mx-auto text-sm">
-          Quanto mais pacotes, mais chances de completar o álbum! Todos incluem álbum premium capa dura, 
-          pacotes de figurinhas e frete grátis para todo o Brasil.
+        <p className="text-center text-muted-foreground mb-12 max-w-lg mx-auto text-sm leading-relaxed">
+          Quanto mais pacotes, mais chances de completar o álbum! Todos incluem álbum premium capa dura e frete grátis.
         </p>
 
-        <div className="grid md:grid-cols-3 gap-6">
+        <div className="grid md:grid-cols-3 gap-5">
           {kits.map((kit, i) => (
             <KitCard key={kit.name} kit={kit} index={i} />
           ))}
         </div>
 
-        <p className="text-center text-accent font-semibold text-sm mt-6">
+        <p className="text-center text-accent font-semibold text-sm mt-8">
           🚚 Frete Grátis para Todo Brasil
         </p>
       </div>
