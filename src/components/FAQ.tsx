@@ -20,7 +20,7 @@ const faqs = [
   },
   {
     q: "Quanto tempo demora a entrega?",
-    a: "O prazo de entrega varia de 5 a 15 dias úteis, dependendo da sua região. O frete é grátis para todo o Brasil.",
+    a: "O prazo de entrega é de 2 a 6 dias úteis. O frete é grátis para todo o Brasil.",
   },
   {
     q: "Posso trocar figurinhas repetidas?",
@@ -28,11 +28,7 @@ const faqs = [
   },
   {
     q: "A pré-venda é confiável?",
-    a: "Absolutamente! Trabalhamos com pagamento seguro via PIX e cartão de crédito, com garantia de entrega ou seu dinheiro de volta.",
-  },
-  {
-    q: "Posso parcelar a compra?",
-    a: "Sim, aceitamos parcelamento em até 12x no cartão de crédito. O valor à vista via PIX possui desconto especial.",
+    a: "Absolutamente! Trabalhamos com pagamento seguro via PIX, com garantia de entrega ou seu dinheiro de volta.",
   },
 ];
 
