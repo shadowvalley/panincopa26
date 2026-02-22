@@ -9,9 +9,9 @@ const stats = [
 ];
 
 const highlights = [
-  "⚽ Primeira Copa do Mundo com 48 seleções",
-  "📖 Álbum com 112 páginas — recorde histórico",
-  "🌍 Três países-sede: EUA, Canadá e México",
+  { title: "48 Seleções", desc: "Primeira Copa do Mundo com 48 equipes classificadas, a maior da história." },
+  { title: "112 Páginas", desc: "O álbum mais extenso já produzido pela Panini, com conteúdo exclusivo." },
+  { title: "3 Países-Sede", desc: "Edição inédita com jogos nos Estados Unidos, Canadá e México." },
 ];
 
 const ProductFeatures = () => {
@@ -47,10 +47,16 @@ const ProductFeatures = () => {
         </div>
 
         <div className="bg-card rounded-2xl p-7 border border-border" style={{ boxShadow: "var(--shadow-card)" }}>
-          <h3 className="text-xl font-display mb-4 tracking-tight">Edição Histórica</h3>
-          <div className="space-y-3">
+          <h3 className="text-xl font-display mb-5 tracking-tight">Edição Histórica</h3>
+          <div className="space-y-4">
             {highlights.map((h) => (
-              <p key={h} className="text-sm text-muted-foreground leading-relaxed">{h}</p>
+              <div key={h.title} className="flex gap-4 items-start">
+                <div className="w-1 h-full min-h-[40px] rounded-full bg-primary/30 shrink-0" />
+                <div>
+                  <p className="text-sm font-semibold text-foreground">{h.title}</p>
+                  <p className="text-sm text-muted-foreground leading-relaxed mt-0.5">{h.desc}</p>
+                </div>
+              </div>
             ))}
           </div>
         </div>
