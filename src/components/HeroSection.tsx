@@ -1,8 +1,16 @@
-import { motion } from "framer-motion";
+import { useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
 import trophyImg from "@/assets/trophy.jpg";
 import productImg from "@/assets/product-album.jpg";
+import album1 from "@/assets/album-1.jpg";
+import album2 from "@/assets/album-2.webp";
+import album3 from "@/assets/album-3.png";
+
+const images = [productImg, album1, album2, album3];
 
 const HeroSection = () => {
+  const [activeIndex, setActiveIndex] = useState(0);
+
   return (
     <section className="pt-12 pb-16 px-4" style={{ background: "var(--gradient-surface)" }}>
       <div className="max-w-2xl mx-auto text-center">
@@ -49,6 +57,7 @@ const HeroSection = () => {
           </p>
         </motion.div>
 
+        {/* Image Carousel */}
         <motion.div
           className="mt-10 rounded-2xl overflow-hidden bg-card p-3"
           style={{ boxShadow: "var(--shadow-card-hover)" }}
@@ -56,11 +65,41 @@ const HeroSection = () => {
           animate={{ y: 0, opacity: 1 }}
           transition={{ duration: 0.6, delay: 0.3 }}
         >
-          <img
-            src={productImg}
-            alt="Álbum de figurinhas colecionável"
-            className="w-full max-w-md mx-auto rounded-xl object-cover"
-          />
+          <div className="relative overflow-hidden rounded-xl">
+            <AnimatePresence mode="wait">
+              <motion.img
+                key={activeIndex}
+                src={images[activeIndex]}
+                alt={`Produto ${activeIndex + 1}`}
+                className="w-full max-w-md mx-auto rounded-xl object-cover"
+                initial={{ opacity: 0, x: 40 }}
+                animate={{ opacity: 1, x: 0 }}
+                exit={{ opacity: 0, x: -40 }}
+                transition={{ duration: 0.3 }}
+              />
+            </AnimatePresence>
+          </div>
+
+          {/* Thumbnail strip – scrollable on mobile */}
+          <div className="flex gap-2 mt-3 overflow-x-auto pb-1 snap-x snap-mandatory scrollbar-hide">
+            {images.map((img, i) => (
+              <button
+                key={i}
+                onClick={() => setActiveIndex(i)}
+                className={`flex-shrink-0 snap-center rounded-lg overflow-hidden border-2 transition-all ${
+                  i === activeIndex
+                    ? "border-primary shadow-md"
+                    : "border-transparent opacity-60 hover:opacity-100"
+                }`}
+              >
+                <img
+                  src={img}
+                  alt={`Miniatura ${i + 1}`}
+                  className="w-16 h-16 object-cover"
+                />
+              </button>
+            ))}
+          </div>
         </motion.div>
       </div>
     </section>
