@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
-import { Star, ChevronDown } from "lucide-react";
+import { Star, ChevronRight } from "lucide-react";
 
 const ratingBreakdown = [
   { stars: 5, pct: 86 },
@@ -96,7 +96,7 @@ const Reviews = () => {
             className="mx-auto mt-6 flex items-center gap-2 text-sm font-semibold text-primary hover:text-primary/80 transition-colors"
           >
             Ver mais avaliações
-            <ChevronDown className="w-4 h-4" />
+            <ChevronRight className="w-4 h-4" />
           </button>
         )}
       </div>
