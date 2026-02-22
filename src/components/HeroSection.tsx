@@ -1,7 +1,7 @@
 import { useState, useCallback, useEffect } from "react";
 import { motion } from "framer-motion";
 import useEmblaCarousel from "embla-carousel-react";
-import trophyImg from "@/assets/trophy.jpg";
+import trophyImg from "@/assets/trophy.png";
 import productImg from "@/assets/product-album.jpg";
 import album1 from "@/assets/album-1.jpg";
 import album2 from "@/assets/album-2.webp";
