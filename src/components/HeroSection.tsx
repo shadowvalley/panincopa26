@@ -79,12 +79,18 @@ const HeroSection = () => {
 
         {/* Image Carousel */}
         <motion.div
-          className="mt-10 rounded-2xl overflow-hidden bg-card p-3"
-          style={{ boxShadow: "var(--shadow-card-hover)" }}
+          className="mt-10 rounded-2xl overflow-hidden bg-card p-1 relative"
+          style={{
+            background: "linear-gradient(135deg, #c8102e 0%, #ff4d4d 25%, #ffd700 50%, #ff4d4d 75%, #c8102e 100%)",
+            backgroundSize: "200% 200%",
+            animation: "borderShimmer 4s ease infinite",
+            boxShadow: "0 0 20px rgba(200, 16, 46, 0.25), var(--shadow-card-hover)",
+          }}
           initial={{ y: 30, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
           transition={{ duration: 0.6, delay: 0.3 }}
         >
+          <div className="bg-card rounded-xl p-2">
           <div className="relative">
             <div className="overflow-hidden rounded-xl" ref={emblaRef}>
               <div className="flex">
@@ -151,6 +157,7 @@ const HeroSection = () => {
                 }`}
               />
             ))}
+          </div>
           </div>
         </motion.div>
       </div>
