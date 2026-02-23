@@ -31,23 +31,34 @@ const HeroSection = () => {
 
   return (
     <section className="pt-12 pb-16 px-4 relative overflow-hidden" style={{ background: "var(--gradient-surface)" }}>
-      {/* Subtle geometric background details */}
+      {/* Football-themed background details */}
       <div className="absolute inset-0 pointer-events-none overflow-hidden">
-        {/* Top-right circle */}
-        <div className="absolute -top-24 -right-24 w-80 h-80 rounded-full border border-primary/[0.06]" />
-        <div className="absolute -top-16 -right-16 w-64 h-64 rounded-full border border-primary/[0.04]" />
-        {/* Bottom-left circle */}
-        <div className="absolute -bottom-32 -left-32 w-96 h-96 rounded-full border border-primary/[0.05]" />
-        {/* Subtle grid pattern */}
+        {/* Large football field circle (center circle) */}
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] rounded-full border-2 border-primary/[0.08]" />
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-4 h-4 rounded-full bg-primary/[0.08]" />
+        
+        {/* Corner arcs */}
+        <div className="absolute -top-12 -right-12 w-32 h-32 rounded-full border-2 border-primary/[0.12]" />
+        <div className="absolute -top-12 -left-12 w-32 h-32 rounded-full border-2 border-primary/[0.12]" />
+        <div className="absolute -bottom-12 -right-12 w-32 h-32 rounded-full border-2 border-primary/[0.10]" />
+        <div className="absolute -bottom-12 -left-12 w-32 h-32 rounded-full border-2 border-primary/[0.10]" />
+        
+        {/* Field lines */}
+        <div className="absolute top-0 left-1/2 w-px h-full bg-primary/[0.06]" />
+        <div className="absolute top-1/2 left-0 w-full h-px bg-primary/[0.06]" />
+        
+        {/* Penalty box shapes */}
+        <div className="absolute -top-4 left-1/2 -translate-x-1/2 w-48 h-24 border-2 border-t-0 border-primary/[0.07] rounded-b-xl" />
+        <div className="absolute -bottom-4 left-1/2 -translate-x-1/2 w-48 h-24 border-2 border-b-0 border-primary/[0.07] rounded-t-xl" />
+        
+        {/* Dot pattern like stadium texture */}
         <div
-          className="absolute inset-0 opacity-[0.025]"
+          className="absolute inset-0 opacity-[0.04]"
           style={{
-            backgroundImage: `radial-gradient(circle, hsl(var(--primary)) 1px, transparent 1px)`,
-            backgroundSize: "40px 40px",
+            backgroundImage: `radial-gradient(circle, hsl(var(--primary)) 1.2px, transparent 1.2px)`,
+            backgroundSize: "32px 32px",
           }}
         />
-        {/* Diagonal accent line */}
-        <div className="absolute top-0 left-1/2 w-px h-32 bg-gradient-to-b from-primary/10 to-transparent" />
       </div>
       <div className="max-w-2xl mx-auto text-center">
         <motion.img
