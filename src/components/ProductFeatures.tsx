@@ -17,20 +17,64 @@ const highlights = [
 const ProductFeatures = () => {
   return (
     <section className="py-16 px-4 bg-muted/40 relative overflow-hidden">
-      {/* Football-themed background icons */}
+      {/* Football-themed minimalist line-art background */}
       <div className="absolute inset-0 pointer-events-none overflow-hidden">
-        {/* Trophy */}
-        <svg className="absolute top-8 left-[8%] w-16 h-16 text-primary/[0.06]" viewBox="0 0 24 24" fill="currentColor"><path d="M5 3h14v2h-1v2a5 5 0 01-3.18 4.66A3.5 3.5 0 0112 15.5a3.5 3.5 0 01-2.82-3.84A5 5 0 016 7V5H5V3zm3 2v2a3 3 0 003 3h2a3 3 0 003-3V5H8zM9 17h6v2H9v-2zm-1 4h8v1H8v-1z"/></svg>
-        {/* Soccer ball */}
-        <svg className="absolute top-20 right-[10%] w-14 h-14 text-primary/[0.07]" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5"><circle cx="12" cy="12" r="10"/><path d="M12 2l3 7h-6l3-7zm-10 10l7-3v6l-7-3zm20 0l-7-3v6l7-3zm-10 10l-3-7h6l-3 7z"/></svg>
-        {/* Boot/Cleat */}
-        <svg className="absolute bottom-12 left-[12%] w-16 h-16 text-primary/[0.06]" viewBox="0 0 24 24" fill="currentColor"><path d="M3 17h2v-3l4-4 3 1 5-3 4 2v1h1v3l-1 1v2H3v-2l1-1v-1H3v1zm5-5l-2 2v2h14v-1l1-1v-1l-3-1.5-5 3-3-1L8 12z"/></svg>
-        {/* Another trophy */}
-        <svg className="absolute bottom-24 right-[6%] w-12 h-12 text-primary/[0.05] rotate-12" viewBox="0 0 24 24" fill="currentColor"><path d="M5 3h14v2h-1v2a5 5 0 01-3.18 4.66A3.5 3.5 0 0112 15.5a3.5 3.5 0 01-2.82-3.84A5 5 0 016 7V5H5V3zm3 2v2a3 3 0 003 3h2a3 3 0 003-3V5H8zM9 17h6v2H9v-2zm-1 4h8v1H8v-1z"/></svg>
-        {/* Ball */}
-        <svg className="absolute top-1/2 left-[3%] w-10 h-10 text-primary/[0.05]" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5"><circle cx="12" cy="12" r="10"/><path d="M12 2l3 7h-6l3-7zm-10 10l7-3v6l-7-3zm20 0l-7-3v6l7-3zm-10 10l-3-7h6l-3 7z"/></svg>
-        {/* Boot */}
-        <svg className="absolute top-10 left-1/2 w-10 h-10 text-primary/[0.04] -rotate-12" viewBox="0 0 24 24" fill="currentColor"><path d="M3 17h2v-3l4-4 3 1 5-3 4 2v1h1v3l-1 1v2H3v-2l1-1v-1H3v1zm5-5l-2 2v2h14v-1l1-1v-1l-3-1.5-5 3-3-1L8 12z"/></svg>
+        {/* Soccer Ball - top right */}
+        <svg className="absolute top-6 right-[8%] w-20 h-20 opacity-[0.08]" viewBox="0 0 64 64" fill="none" stroke="hsl(var(--primary))" strokeWidth="1.2" strokeLinecap="round" strokeLinejoin="round">
+          <circle cx="32" cy="32" r="30"/>
+          <polygon points="32,8 38,20 26,20"/>
+          <polygon points="54,24 48,36 42,24"/>
+          <polygon points="50,48 38,48 44,36"/>
+          <polygon points="32,56 26,44 38,44"/>
+          <polygon points="14,48 20,36 26,48"/>
+          <polygon points="10,24 22,24 16,36"/>
+          <line x1="32" y1="8" x2="42" y2="24"/>
+          <line x1="54" y1="24" x2="44" y2="36"/>
+          <line x1="50" y1="48" x2="38" y2="44"/>
+          <line x1="32" y1="56" x2="26" y2="44"/>
+          <line x1="14" y1="48" x2="20" y2="36"/>
+          <line x1="10" y1="24" x2="22" y2="24"/>
+        </svg>
+
+        {/* Trophy - top left */}
+        <svg className="absolute top-10 left-[6%] w-18 h-18 opacity-[0.07]" viewBox="0 0 64 64" fill="none" stroke="hsl(var(--primary))" strokeWidth="1.2" strokeLinecap="round" strokeLinejoin="round">
+          <path d="M20 8h24v4c0 8-4 16-12 20-8-4-12-12-12-20V8z"/>
+          <path d="M20 12h-6c-2 0-4 2-4 4v2c0 6 4 10 10 10"/>
+          <path d="M44 12h6c2 0 4 2 4 4v2c0 6-4 10-10 10"/>
+          <line x1="32" y1="32" x2="32" y2="42"/>
+          <rect x="24" y="42" width="16" height="4" rx="1"/>
+          <rect x="20" y="46" width="24" height="4" rx="2"/>
+          <path d="M28 14l4 8 4-8" opacity="0.5"/>
+        </svg>
+
+        {/* Boot/Cleat - bottom left */}
+        <svg className="absolute bottom-8 left-[10%] w-20 h-20 opacity-[0.07]" viewBox="0 0 64 64" fill="none" stroke="hsl(var(--primary))" strokeWidth="1.2" strokeLinecap="round" strokeLinejoin="round">
+          <path d="M12 44c0-4 2-8 6-10l8-8c2-2 4-2 6 0l4 4 6-2c2-1 4 0 5 2l4 6c1 2 0 4-2 5l-6 3h2c2 0 4 2 4 4v4c0 2-2 4-4 4H16c-2 0-4-2-4-4v-8z"/>
+          <line x1="18" y1="53" x2="18" y2="57"/>
+          <line x1="24" y1="53" x2="24" y2="57"/>
+          <line x1="30" y1="53" x2="30" y2="57"/>
+          <line x1="36" y1="53" x2="36" y2="57"/>
+          <path d="M26 30l6 6" opacity="0.5"/>
+        </svg>
+
+        {/* Small soccer ball - bottom right */}
+        <svg className="absolute bottom-16 right-[5%] w-14 h-14 opacity-[0.06] rotate-12" viewBox="0 0 64 64" fill="none" stroke="hsl(var(--primary))" strokeWidth="1.2" strokeLinecap="round" strokeLinejoin="round">
+          <circle cx="32" cy="32" r="30"/>
+          <polygon points="32,8 38,20 26,20"/>
+          <polygon points="54,24 48,36 42,24"/>
+          <polygon points="50,48 38,48 44,36"/>
+          <polygon points="32,56 26,44 38,44"/>
+          <polygon points="14,48 20,36 26,48"/>
+          <polygon points="10,24 22,24 16,36"/>
+        </svg>
+
+        {/* Small trophy - center left */}
+        <svg className="absolute top-1/2 left-[2%] w-12 h-12 opacity-[0.05] -rotate-6" viewBox="0 0 64 64" fill="none" stroke="hsl(var(--primary))" strokeWidth="1.2" strokeLinecap="round" strokeLinejoin="round">
+          <path d="M20 8h24v4c0 8-4 16-12 20-8-4-12-12-12-20V8z"/>
+          <line x1="32" y1="32" x2="32" y2="42"/>
+          <rect x="24" y="42" width="16" height="4" rx="1"/>
+          <rect x="20" y="46" width="24" height="4" rx="2"/>
+        </svg>
       </div>
       <div className="max-w-3xl mx-auto relative z-10">
         <h2 className="text-3xl md:text-4xl font-display text-center mb-2 tracking-tight">
