@@ -16,8 +16,23 @@ const highlights = [
 
 const ProductFeatures = () => {
   return (
-    <section className="py-16 px-4 bg-muted/40">
-      <div className="max-w-3xl mx-auto">
+    <section className="py-16 px-4 bg-muted/40 relative overflow-hidden">
+      {/* Football-themed background icons */}
+      <div className="absolute inset-0 pointer-events-none overflow-hidden">
+        {/* Trophy */}
+        <svg className="absolute top-8 left-[8%] w-16 h-16 text-primary/[0.06]" viewBox="0 0 24 24" fill="currentColor"><path d="M5 3h14v2h-1v2a5 5 0 01-3.18 4.66A3.5 3.5 0 0112 15.5a3.5 3.5 0 01-2.82-3.84A5 5 0 016 7V5H5V3zm3 2v2a3 3 0 003 3h2a3 3 0 003-3V5H8zM9 17h6v2H9v-2zm-1 4h8v1H8v-1z"/></svg>
+        {/* Soccer ball */}
+        <svg className="absolute top-20 right-[10%] w-14 h-14 text-primary/[0.07]" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5"><circle cx="12" cy="12" r="10"/><path d="M12 2l3 7h-6l3-7zm-10 10l7-3v6l-7-3zm20 0l-7-3v6l7-3zm-10 10l-3-7h6l-3 7z"/></svg>
+        {/* Boot/Cleat */}
+        <svg className="absolute bottom-12 left-[12%] w-16 h-16 text-primary/[0.06]" viewBox="0 0 24 24" fill="currentColor"><path d="M3 17h2v-3l4-4 3 1 5-3 4 2v1h1v3l-1 1v2H3v-2l1-1v-1H3v1zm5-5l-2 2v2h14v-1l1-1v-1l-3-1.5-5 3-3-1L8 12z"/></svg>
+        {/* Another trophy */}
+        <svg className="absolute bottom-24 right-[6%] w-12 h-12 text-primary/[0.05] rotate-12" viewBox="0 0 24 24" fill="currentColor"><path d="M5 3h14v2h-1v2a5 5 0 01-3.18 4.66A3.5 3.5 0 0112 15.5a3.5 3.5 0 01-2.82-3.84A5 5 0 016 7V5H5V3zm3 2v2a3 3 0 003 3h2a3 3 0 003-3V5H8zM9 17h6v2H9v-2zm-1 4h8v1H8v-1z"/></svg>
+        {/* Ball */}
+        <svg className="absolute top-1/2 left-[3%] w-10 h-10 text-primary/[0.05]" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5"><circle cx="12" cy="12" r="10"/><path d="M12 2l3 7h-6l3-7zm-10 10l7-3v6l-7-3zm20 0l-7-3v6l7-3zm-10 10l-3-7h6l-3 7z"/></svg>
+        {/* Boot */}
+        <svg className="absolute top-10 left-1/2 w-10 h-10 text-primary/[0.04] -rotate-12" viewBox="0 0 24 24" fill="currentColor"><path d="M3 17h2v-3l4-4 3 1 5-3 4 2v1h1v3l-1 1v2H3v-2l1-1v-1H3v1zm5-5l-2 2v2h14v-1l1-1v-1l-3-1.5-5 3-3-1L8 12z"/></svg>
+      </div>
+      <div className="max-w-3xl mx-auto relative z-10">
         <h2 className="text-3xl md:text-4xl font-display text-center mb-2 tracking-tight">
           Sobre o Álbum
         </h2>
