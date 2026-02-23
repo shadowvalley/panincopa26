@@ -91,15 +91,15 @@ const KitCard = ({ kit, index }: { kit: Kit; index: number }) => (
       />
     </div>
 
-    <h3 className="text-xl font-display text-center mb-1.5 tracking-tight text-foreground">{kit.name}</h3>
-    <p className="text-xs text-muted-foreground text-center mb-6 leading-relaxed">
+    <h3 className="text-xl font-display font-bold text-center mb-1.5 tracking-tight text-foreground uppercase">{kit.name}</h3>
+    <p className="text-xs font-body text-muted-foreground text-center mb-6 leading-relaxed tracking-wide">
       1 Álbum Capa Dura + <span className="font-semibold text-foreground">{kit.packs} Pacotes</span>
     </p>
 
     <div className="text-center mb-4 bg-muted/40 rounded-xl py-3 px-4">
-      <p className="text-xs text-muted-foreground line-through mb-0.5">{kit.originalPrice}</p>
-      <p className="text-3xl font-bold text-primary font-display tracking-tight">{kit.price}</p>
-      <p className="text-[11px] text-muted-foreground mt-1">à vista no PIX</p>
+      <p className="text-xs font-body text-muted-foreground line-through mb-0.5 tracking-wide">{kit.originalPrice}</p>
+      <p className="text-3xl font-extrabold text-primary font-display tracking-tighter">{kit.price}</p>
+      <p className="text-[11px] font-body text-muted-foreground mt-1 tracking-wide uppercase">à vista no PIX</p>
     </div>
 
 
