@@ -36,8 +36,8 @@ const ProductFeatures = () => {
               viewport={{ once: true }}
               transition={{ delay: i * 0.08 }}
             >
-              <div className="w-10 h-10 rounded-xl bg-primary/10 flex items-center justify-center mx-auto mb-3">
-                <stat.icon className="w-5 h-5 text-primary" />
+              <div className="w-12 h-12 rounded-2xl bg-gradient-to-br from-primary/15 to-primary/5 flex items-center justify-center mx-auto mb-3 border border-primary/10 shadow-sm">
+                <stat.icon className="w-5 h-5 text-primary" strokeWidth={1.5} />
               </div>
               <p className="text-3xl font-display text-foreground tracking-tight">{stat.value}</p>
               <p className="text-sm font-semibold mt-1">{stat.label}</p>
