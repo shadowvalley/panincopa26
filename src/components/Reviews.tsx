@@ -106,7 +106,7 @@ const Reviews = () => {
                     </div>
                     <span className="text-[11px] text-muted-foreground">{review.date}</span>
                   </div>
-                  <p className="text-sm font-body text-muted-foreground leading-relaxed line-clamp-5">{review.text}</p>
+                  <p className={`text-sm font-body text-muted-foreground leading-relaxed ${review.photo ? "line-clamp-4" : ""}`}>{review.text}</p>
                   {"photo" in review && review.photo && (
                     <img src={review.photo as string} alt="Foto anexada" loading="lazy" className="mt-3 rounded-xl w-full h-40 object-cover border border-border" />
                   )}
