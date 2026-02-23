@@ -30,7 +30,25 @@ const HeroSection = () => {
   );
 
   return (
-    <section className="pt-12 pb-16 px-4" style={{ background: "var(--gradient-surface)" }}>
+    <section className="pt-12 pb-16 px-4 relative overflow-hidden" style={{ background: "var(--gradient-surface)" }}>
+      {/* Subtle geometric background details */}
+      <div className="absolute inset-0 pointer-events-none overflow-hidden">
+        {/* Top-right circle */}
+        <div className="absolute -top-24 -right-24 w-80 h-80 rounded-full border border-primary/[0.06]" />
+        <div className="absolute -top-16 -right-16 w-64 h-64 rounded-full border border-primary/[0.04]" />
+        {/* Bottom-left circle */}
+        <div className="absolute -bottom-32 -left-32 w-96 h-96 rounded-full border border-primary/[0.05]" />
+        {/* Subtle grid pattern */}
+        <div
+          className="absolute inset-0 opacity-[0.025]"
+          style={{
+            backgroundImage: `radial-gradient(circle, hsl(var(--primary)) 1px, transparent 1px)`,
+            backgroundSize: "40px 40px",
+          }}
+        />
+        {/* Diagonal accent line */}
+        <div className="absolute top-0 left-1/2 w-px h-32 bg-gradient-to-b from-primary/10 to-transparent" />
+      </div>
       <div className="max-w-2xl mx-auto text-center">
         <motion.img
           src={trophyImg}
