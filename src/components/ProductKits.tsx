@@ -55,7 +55,7 @@ const kits: Kit[] = [
 
 const KitCard = ({ kit, index }: { kit: Kit; index: number }) => (
   <motion.div
-    className={`relative rounded-2xl p-6 transition-all duration-300 border ${
+    className={`relative rounded-2xl p-5 transition-all duration-300 border ${
       kit.highlight
         ? "bg-card border-primary/30 shadow-xl scale-[1.03]"
         : "bg-card border-border hover:border-primary/20 hover:shadow-lg"
@@ -66,13 +66,9 @@ const KitCard = ({ kit, index }: { kit: Kit; index: number }) => (
     viewport={{ once: true }}
     transition={{ duration: 0.4, delay: index * 0.1 }}
   >
-    <div className="absolute -top-3 -right-3 text-xs font-bold px-3 py-1.5 rounded-full text-destructive-foreground" style={{ background: "var(--gradient-urgency)" }}>
-      {kit.discount}
-    </div>
-
     {kit.badge && (
       <div className="text-center mb-3">
-        <span className={`inline-block text-[11px] font-bold px-4 py-1.5 rounded-full tracking-wider ${
+        <span className={`inline-block text-[10px] font-semibold px-3 py-1 rounded-full tracking-widest uppercase ${
           kit.badge === "MAIS VENDIDO"
             ? "bg-primary text-primary-foreground"
             : "bg-accent text-accent-foreground"
@@ -82,32 +78,36 @@ const KitCard = ({ kit, index }: { kit: Kit; index: number }) => (
       </div>
     )}
 
-    <div className="overflow-hidden rounded-xl mb-5 mx-auto">
+    <div className="overflow-hidden rounded-lg mb-4 mx-auto">
       <img
         src={kit.image}
         alt={kit.name}
         loading="lazy"
-        className="w-full h-44 object-cover hover:scale-105 transition-transform duration-500"
+        className="w-full h-40 object-cover hover:scale-105 transition-transform duration-500"
       />
     </div>
 
-    <h3 className="text-xl font-display font-bold text-center mb-1.5 tracking-tight text-foreground uppercase">{kit.name}</h3>
-    <p className="text-xs font-body text-muted-foreground text-center mb-6 leading-relaxed tracking-wide">
-      1 Álbum Capa Dura + <span className="font-semibold text-foreground">{kit.packs} Pacotes</span>
+    <h3 className="text-base font-display font-semibold text-center mb-1 tracking-tight text-foreground">{kit.name}</h3>
+    <p className="text-[11px] font-body text-muted-foreground text-center mb-4 tracking-wide">
+      Álbum Capa Dura + <span className="font-medium text-foreground">{kit.packs} Pacotes</span> ({kit.stickers} figurinhas)
     </p>
 
-    <div className="text-center mb-4 bg-muted/40 rounded-xl py-3 px-4">
-      <p className="text-xs font-body text-muted-foreground line-through mb-0.5 tracking-wide">{kit.originalPrice}</p>
-      <p className="text-3xl font-extrabold text-primary font-display tracking-tighter">{kit.price}</p>
-      <p className="text-[11px] font-body text-muted-foreground mt-1 tracking-wide uppercase">à vista no PIX</p>
+    <div className="text-center mb-4 rounded-lg py-3 px-3 border border-border/50">
+      <div className="flex items-center justify-center gap-2 mb-1">
+        <span className="text-xs font-body text-muted-foreground line-through">{kit.originalPrice}</span>
+        <span className="text-[10px] font-semibold text-destructive bg-destructive/10 px-1.5 py-0.5 rounded">{kit.discount}</span>
+      </div>
+      <p className="text-2xl font-bold text-primary font-display tracking-tight">{kit.price}</p>
+      <p className="text-[10px] font-body text-muted-foreground mt-0.5 tracking-wide">à vista no PIX</p>
     </div>
 
+    <p className="text-[10px] text-center text-muted-foreground mb-3">Economia de <span className="font-semibold text-foreground">{kit.savings}</span></p>
 
     <button
-      className="w-full py-3.5 rounded-xl font-bold text-primary-foreground text-sm tracking-wide animate-pulse-glow transition-all hover:scale-[1.02] active:scale-[0.98]"
+      className="w-full py-3 rounded-lg font-semibold text-primary-foreground text-sm tracking-wide animate-pulse-glow transition-all hover:scale-[1.02] active:scale-[0.98]"
       style={{ background: "var(--gradient-cta)", boxShadow: "var(--shadow-cta)" }}
     >
-      GARANTIR MEU KIT
+      Garantir Meu Kit
     </button>
   </motion.div>
 );
