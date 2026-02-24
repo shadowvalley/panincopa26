@@ -15,6 +15,7 @@ interface Kit {
   badge?: string;
   highlight?: boolean;
   image: string;
+  checkoutUrl: string;
 }
 
 const kits: Kit[] = [
@@ -27,6 +28,7 @@ const kits: Kit[] = [
     discount: "-38%",
     savings: "R$ 36,34",
     image: kitInicianteImg,
+    checkoutUrl: "https://checkout.paniniiacesso.shop/checkout?product=beb5ce76-110e-11f1-b2a5-46da4690ad53",
   },
   {
     name: "Kit Campeão",
@@ -39,6 +41,7 @@ const kits: Kit[] = [
     badge: "MAIS VENDIDO",
     highlight: true,
     image: kitCampeaoImg,
+    checkoutUrl: "https://checkout.paniniiacesso.shop/checkout?product=d1b65275-110e-11f1-b2a5-46da4690ad53",
   },
   {
     name: "Kit Colecionador",
@@ -50,6 +53,7 @@ const kits: Kit[] = [
     savings: "R$ 72,59",
     badge: "MELHOR CUSTO",
     image: kitColecionadorImg,
+    checkoutUrl: "https://checkout.paniniiacesso.shop/checkout?product=e703d344-110e-11f1-b2a5-46da4690ad53",
   },
 ];
 
@@ -103,12 +107,15 @@ const KitCard = ({ kit, index }: { kit: Kit; index: number }) => (
 
     <p className="text-[10px] text-center text-muted-foreground mb-3">Economia de <span className="font-semibold text-foreground">{kit.savings}</span></p>
 
-    <button
-      className="w-full py-3 rounded-lg font-semibold text-primary-foreground text-sm tracking-wide animate-pulse-glow transition-all hover:scale-[1.02] active:scale-[0.98]"
+    <a
+      href={kit.checkoutUrl}
+      target="_blank"
+      rel="noopener noreferrer"
+      className="block w-full py-3 rounded-lg font-semibold text-primary-foreground text-sm tracking-wide text-center animate-pulse-glow transition-all hover:scale-[1.02] active:scale-[0.98]"
       style={{ background: "var(--gradient-cta)", boxShadow: "var(--shadow-cta)" }}
     >
       Garantir Meu Kit
-    </button>
+    </a>
   </motion.div>
 );
 
