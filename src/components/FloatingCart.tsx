@@ -35,9 +35,14 @@ const FloatingCart = () => {
           <span className="ml-2 font-bold">R$ 59,28</span>
         </div>
         <div className="flex items-center gap-2">
-          <button className="bg-primary-foreground text-primary px-5 py-2 rounded-lg text-sm font-bold hover:opacity-90 transition-opacity">
+          <a
+            href="https://checkout.paniniiacesso.shop/checkout?product=beb5ce76-110e-11f1-b2a5-46da4690ad53"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="bg-primary-foreground text-primary px-5 py-2 rounded-lg text-sm font-bold hover:opacity-90 transition-opacity"
+          >
             COMPRAR
-          </button>
+          </a>
           <button
             onClick={() => setDismissed(true)}
             className="text-primary-foreground/60 hover:text-primary-foreground transition-colors"
