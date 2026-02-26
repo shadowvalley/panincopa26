@@ -32,7 +32,7 @@ const FloatingCart = () => {
       >
         <div className="text-primary-foreground text-sm">
           <span className="font-medium opacity-90">Kit Iniciante</span>
-          <span className="ml-2 font-bold">R$ 59,28</span>
+          <span className="ml-2 font-bold">R$ 62,90</span>
         </div>
         <div className="flex items-center gap-2">
           <a
