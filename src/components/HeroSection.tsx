@@ -81,7 +81,7 @@ const HeroSection = () => {
           <p className="text-foreground/80 mb-5 text-[15px] leading-relaxed max-w-sm">
             Reviva a emoção da Copa com o álbum oficial capa dura + até <span className="font-semibold text-primary">90 pacotes</span> de figurinhas. Edição limitada com frete grátis para todo o Brasil.
           </p>
-          <div className="inline-flex items-center gap-2.5 px-5 py-2.5 rounded-full border border-primary/20 bg-gradient-to-r from-primary/5 to-accent/10" style={{ boxShadow: "var(--shadow-card)" }}>
+          <div className="inline-flex items-center gap-2.5 px-5 py-2.5 rounded-full border border-border/50 bg-white" style={{ boxShadow: "0 4px 20px -4px rgba(0,0,0,0.1)" }}>
             <span className="flex h-2 w-2 relative">
               <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-destructive opacity-75" />
               <span className="relative inline-flex rounded-full h-2 w-2 bg-destructive" />
