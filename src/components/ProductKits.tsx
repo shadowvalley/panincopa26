@@ -124,7 +124,7 @@ const ProductKits = () => {
           Escolha Seu Kit
         </h2>
         <p className="text-center text-muted-foreground mb-12 max-w-lg mx-auto text-sm leading-relaxed">
-          Quanto mais pacotes, mais chances de completar o álbum! Todos incluem álbum premium capa dura e frete grátis.
+          Quanto mais pacotes, mais chances de completar o álbum! Todos incluem álbum premium capa dura.
         </p>
 
         <div className="grid md:grid-cols-3 gap-5">
