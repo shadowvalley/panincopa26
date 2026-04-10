@@ -91,7 +91,7 @@ const Reviews = () => {
               {reviews.map((review) => (
                 <div
                   key={review.name}
-                  className="bg-card rounded-2xl p-5 border border-border flex-[0_0_85%] md:flex-[0_0_45%] lg:flex-[0_0_32%] min-w-0"
+                  className="bg-card rounded-2xl p-5 border border-border flex-[0_0_85%] md:flex-[0_0_45%] lg:flex-[0_0_32%] min-w-0 flex flex-col"
                   style={{ boxShadow: "var(--shadow-card)" }}
                 >
                   <div className="flex items-center gap-2 mb-2">
@@ -109,9 +109,9 @@ const Reviews = () => {
                     </div>
                     <span className="text-[11px] text-muted-foreground">{review.date}</span>
                   </div>
-                  <p className={`text-sm font-body text-muted-foreground leading-relaxed ${review.photo ? "line-clamp-4" : ""}`}>{review.text}</p>
+                  <p className="text-sm font-body text-muted-foreground leading-relaxed line-clamp-5 flex-1">{review.text}</p>
                   {"photo" in review && review.photo && (
-                    <img src={review.photo as string} alt="Foto anexada" loading="lazy" className="mt-3 rounded-xl w-full h-40 object-cover border border-border" />
+                    <img src={review.photo as string} alt="Foto anexada" loading="lazy" className="mt-3 rounded-xl w-full h-36 object-cover border border-border" />
                   )}
                 </div>
               ))}
