@@ -1,5 +1,4 @@
 import { useState, useCallback, useEffect } from "react";
-import { motion } from "framer-motion";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import useEmblaCarousel from "embla-carousel-react";
 import trophyImg from "@/assets/trophy.png";
@@ -33,25 +32,16 @@ const HeroSection = () => {
     <section className="pt-12 pb-16 px-4 relative overflow-hidden" style={{ background: "var(--gradient-surface)" }}>
       {/* Football-themed background details */}
       <div className="absolute inset-0 pointer-events-none overflow-hidden">
-        {/* Large football field circle (center circle) */}
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] rounded-full border-2 border-primary/[0.08]" />
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-4 h-4 rounded-full bg-primary/[0.08]" />
-        
-        {/* Corner arcs */}
         <div className="absolute -top-12 -right-12 w-32 h-32 rounded-full border-2 border-primary/[0.12]" />
         <div className="absolute -top-12 -left-12 w-32 h-32 rounded-full border-2 border-primary/[0.12]" />
         <div className="absolute -bottom-12 -right-12 w-32 h-32 rounded-full border-2 border-primary/[0.10]" />
         <div className="absolute -bottom-12 -left-12 w-32 h-32 rounded-full border-2 border-primary/[0.10]" />
-        
-        {/* Field lines */}
         <div className="absolute top-0 left-1/2 w-px h-full bg-primary/[0.06]" />
         <div className="absolute top-1/2 left-0 w-full h-px bg-primary/[0.06]" />
-        
-        {/* Penalty box shapes */}
         <div className="absolute -top-4 left-1/2 -translate-x-1/2 w-48 h-24 border-2 border-t-0 border-primary/[0.07] rounded-b-xl" />
         <div className="absolute -bottom-4 left-1/2 -translate-x-1/2 w-48 h-24 border-2 border-b-0 border-primary/[0.07] rounded-t-xl" />
-        
-        {/* Dot pattern like stadium texture */}
         <div
           className="absolute inset-0 opacity-[0.04]"
           style={{
@@ -61,22 +51,15 @@ const HeroSection = () => {
         />
       </div>
       <div className="max-w-2xl mx-auto text-center">
-        <motion.img
+        <img
           src={trophyImg}
           alt="Troféu do campeonato"
           loading="eager"
           decoding="async"
           className="w-24 mx-auto object-contain mb-6 drop-shadow-xl"
-          initial={{ scale: 0.8, opacity: 0 }}
-          animate={{ scale: 1, opacity: 1 }}
-          transition={{ duration: 0.5 }}
         />
 
-        <motion.div
-          initial={{ y: 20, opacity: 0 }}
-          animate={{ y: 0, opacity: 1 }}
-          transition={{ duration: 0.5, delay: 0.1 }}
-        >
+        <div>
           <p className="text-xs font-semibold text-primary tracking-[0.2em] uppercase mb-1">
             Álbum Oficial de Coleção
           </p>
@@ -104,10 +87,10 @@ const HeroSection = () => {
           <p className="text-sm font-semibold text-foreground/80 bg-card inline-block px-4 py-2 rounded-lg" style={{ boxShadow: "var(--shadow-card)" }}>
             Apenas 5.000 unidades disponíveis para o Brasil!
           </p>
-        </motion.div>
+        </div>
 
         {/* Image Carousel */}
-        <motion.div
+        <div
           className="mt-10 rounded-2xl overflow-hidden bg-card p-1 relative"
           style={{
             background: "linear-gradient(135deg, #c8102e 0%, #ff4d4d 25%, #ffd700 50%, #ff4d4d 75%, #c8102e 100%)",
@@ -115,9 +98,6 @@ const HeroSection = () => {
             animation: "borderShimmer 4s ease infinite",
             boxShadow: "0 0 20px rgba(200, 16, 46, 0.25), var(--shadow-card-hover)",
           }}
-          initial={{ y: 30, opacity: 0 }}
-          animate={{ y: 0, opacity: 1 }}
-          transition={{ duration: 0.6, delay: 0.3 }}
         >
           <div className="bg-card rounded-xl p-2">
           <div className="relative">
@@ -188,7 +168,7 @@ const HeroSection = () => {
             ))}
           </div>
           </div>
-        </motion.div>
+        </div>
       </div>
     </section>
   );

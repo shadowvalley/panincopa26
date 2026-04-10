@@ -1,5 +1,4 @@
 import { useState, useCallback, useEffect } from "react";
-import { motion } from "framer-motion";
 import { Star, ChevronLeft, ChevronRight } from "lucide-react";
 import useEmblaCarousel from "embla-carousel-react";
 import reviewerGabriel from "@/assets/reviewer-gabriel.jpeg";
@@ -81,15 +80,11 @@ const Reviews = () => {
         <div className="relative">
           <div className="overflow-hidden" ref={emblaRef}>
             <div className="flex gap-4">
-              {reviews.map((review, i) => (
-                <motion.div
+              {reviews.map((review) => (
+                <div
                   key={review.name}
                   className="bg-card rounded-2xl p-5 border border-border flex-[0_0_85%] md:flex-[0_0_45%] lg:flex-[0_0_32%] min-w-0"
                   style={{ boxShadow: "var(--shadow-card)" }}
-                  initial={{ opacity: 0 }}
-                  whileInView={{ opacity: 1 }}
-                  viewport={{ once: true }}
-                  transition={{ delay: i * 0.05 }}
                 >
                   <div className="flex items-center gap-2 mb-2">
                     <div className="w-8 h-8 rounded-full bg-primary/10 flex items-center justify-center text-primary font-bold text-xs shrink-0">
@@ -110,7 +105,7 @@ const Reviews = () => {
                   {"photo" in review && review.photo && (
                     <img src={review.photo as string} alt="Foto anexada" loading="lazy" className="mt-3 rounded-xl w-full h-40 object-cover border border-border" />
                   )}
-                </motion.div>
+                </div>
               ))}
             </div>
           </div>

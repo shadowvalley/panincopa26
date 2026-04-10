@@ -1,4 +1,3 @@
-import { motion } from "framer-motion";
 import { Percent, Truck, ShieldCheck, Package, Lock, Shield, BadgeCheck } from "lucide-react";
 
 const benefits = [
@@ -26,22 +25,18 @@ const Benefits = () => {
         </p>
 
         <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-10">
-          {benefits.map((b, i) => (
-            <motion.div
+          {benefits.map((b) => (
+            <div
               key={b.title}
               className="bg-card rounded-2xl p-5 text-center border border-border hover:border-primary/20 transition-colors"
               style={{ boxShadow: "var(--shadow-card)" }}
-              initial={{ y: 20, opacity: 0 }}
-              whileInView={{ y: 0, opacity: 1 }}
-              viewport={{ once: true }}
-              transition={{ delay: i * 0.08 }}
             >
               <div className="w-10 h-10 rounded-xl bg-primary/10 flex items-center justify-center mx-auto mb-3">
                 <b.icon className="w-5 h-5 text-primary" />
               </div>
               <p className="text-sm font-semibold mb-1">{b.title}</p>
               <p className="text-[11px] text-muted-foreground leading-tight">{b.desc}</p>
-            </motion.div>
+            </div>
           ))}
         </div>
 
