@@ -91,7 +91,7 @@ const Reviews = () => {
               {reviews.map((review) => (
                 <div
                   key={review.name}
-                  className="bg-card rounded-2xl p-5 border border-border flex-[0_0_85%] md:flex-[0_0_45%] lg:flex-[0_0_32%] min-w-0 flex flex-col"
+                  className="bg-card rounded-2xl p-5 border border-border flex-[0_0_80%] md:flex-[0_0_45%] lg:flex-[0_0_32%] min-w-0 flex flex-col"
                   style={{ boxShadow: "var(--shadow-card)" }}
                 >
                   <div className="flex items-center gap-2 mb-2">
