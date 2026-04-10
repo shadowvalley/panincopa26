@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import { Truck } from "lucide-react";
+import { trackInitiateCheckout } from "@/lib/tracking";
 import kitInicianteImg from "@/assets/kit-iniciante.jpeg";
 import kitCampeaoImg from "@/assets/kit-campeao.jpeg";
 import kitColecionadorImg from "@/assets/kit-colecionador.jpeg";
@@ -111,6 +112,7 @@ const KitCard = ({ kit, index }: { kit: Kit; index: number }) => (
       href={kit.checkoutUrl}
       target="_blank"
       rel="noopener noreferrer"
+      onClick={() => trackInitiateCheckout(kit.name, kit.price)}
       className="block w-full py-3 rounded-lg font-semibold text-primary-foreground text-sm tracking-wide text-center animate-pulse-glow transition-all hover:scale-[1.02] active:scale-[0.98]"
       style={{ background: "var(--gradient-cta)", boxShadow: "var(--shadow-cta)" }}
     >

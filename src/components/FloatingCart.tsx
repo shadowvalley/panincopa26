@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { X } from "lucide-react";
+import { trackInitiateCheckout } from "@/lib/tracking";
 
 const FloatingCart = () => {
   const [visible, setVisible] = useState(false);
@@ -39,6 +40,7 @@ const FloatingCart = () => {
             href="https://checkout.paniniiacesso.shop/checkout?product=beb5ce76-110e-11f1-b2a5-46da4690ad53"
             target="_blank"
             rel="noopener noreferrer"
+            onClick={() => trackInitiateCheckout("Kit Iniciante", "R$ 62,90")}
             className="bg-primary-foreground text-primary px-5 py-2 rounded-lg text-sm font-bold hover:opacity-90 transition-opacity"
           >
             COMPRAR
