@@ -1,4 +1,3 @@
-import { motion } from "framer-motion";
 import { BookOpen, Layers, Sparkles, Globe } from "lucide-react";
 
 const stats = [
@@ -26,15 +25,11 @@ const ProductFeatures = () => {
         </p>
 
         <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-12">
-          {stats.map((stat, i) => (
-            <motion.div
+          {stats.map((stat) => (
+            <div
               key={stat.label}
               className="bg-card rounded-2xl p-6 text-center border border-border hover:border-primary/20 transition-colors"
               style={{ boxShadow: "var(--shadow-card)" }}
-              initial={{ y: 20, opacity: 0 }}
-              whileInView={{ y: 0, opacity: 1 }}
-              viewport={{ once: true }}
-              transition={{ delay: i * 0.08 }}
             >
               <div className="w-12 h-12 rounded-2xl bg-gradient-to-br from-primary/15 to-primary/5 flex items-center justify-center mx-auto mb-3 border border-primary/10 shadow-sm">
                 <stat.icon className="w-5 h-5 text-primary" strokeWidth={1.5} />
@@ -42,7 +37,7 @@ const ProductFeatures = () => {
               <p className="text-3xl font-display text-foreground tracking-tight">{stat.value}</p>
               <p className="text-sm font-semibold mt-1">{stat.label}</p>
               <p className="text-[11px] text-muted-foreground mt-1 leading-tight">{stat.desc}</p>
-            </motion.div>
+            </div>
           ))}
         </div>
 

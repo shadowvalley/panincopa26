@@ -1,4 +1,3 @@
-import { motion } from "framer-motion";
 import { Truck } from "lucide-react";
 import { trackInitiateCheckout } from "@/lib/tracking";
 import kitInicianteImg from "@/assets/kit-iniciante.jpeg";
@@ -58,18 +57,14 @@ const kits: Kit[] = [
   },
 ];
 
-const KitCard = ({ kit, index }: { kit: Kit; index: number }) => (
-  <motion.div
+const KitCard = ({ kit }: { kit: Kit; index: number }) => (
+  <div
     className={`relative rounded-2xl p-5 transition-all duration-300 border ${
       kit.highlight
         ? "bg-card border-primary/30 shadow-xl scale-[1.03]"
         : "bg-card border-border hover:border-primary/20 hover:shadow-lg"
     }`}
     style={{ boxShadow: kit.highlight ? "var(--shadow-card-hover)" : "var(--shadow-card)" }}
-    initial={{ y: 30, opacity: 0 }}
-    whileInView={{ y: 0, opacity: 1 }}
-    viewport={{ once: true }}
-    transition={{ duration: 0.4, delay: index * 0.1 }}
   >
     {kit.badge && (
       <div className="text-center mb-3">
@@ -118,7 +113,7 @@ const KitCard = ({ kit, index }: { kit: Kit; index: number }) => (
     >
       Garantir Meu Kit
     </a>
-  </motion.div>
+  </div>
 );
 
 const ProductKits = () => {
