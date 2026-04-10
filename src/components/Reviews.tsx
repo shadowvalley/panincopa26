@@ -87,7 +87,7 @@ const Reviews = () => {
 
         <div className="relative">
           <div className="overflow-hidden" ref={emblaRef}>
-            <div className="flex gap-4">
+            <div className="flex gap-6">
               {reviews.map((review) => (
                 <div
                   key={review.name}
