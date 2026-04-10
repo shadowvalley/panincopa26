@@ -84,9 +84,15 @@ const HeroSection = () => {
           <p className="text-muted-foreground mb-5 text-[15px] leading-relaxed">
             Garanta seu álbum de capa dura com 30, 60 ou 90 pacotes de figurinhas inclusos.
           </p>
-          <p className="text-sm font-semibold text-foreground/80 bg-card inline-block px-4 py-2 rounded-lg" style={{ boxShadow: "var(--shadow-card)" }}>
-            Apenas 5.000 unidades disponíveis para o Brasil!
-          </p>
+          <div className="inline-flex items-center gap-2.5 px-5 py-2.5 rounded-full border border-primary/20 bg-gradient-to-r from-primary/5 to-accent/10" style={{ boxShadow: "var(--shadow-card)" }}>
+            <span className="flex h-2 w-2 relative">
+              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-destructive opacity-75" />
+              <span className="relative inline-flex rounded-full h-2 w-2 bg-destructive" />
+            </span>
+            <span className="text-sm font-semibold text-foreground tracking-tight">
+              Apenas <span className="text-primary font-bold">5.000</span> unidades disponíveis para o Brasil
+            </span>
+          </div>
         </div>
 
         {/* Image Carousel */}
