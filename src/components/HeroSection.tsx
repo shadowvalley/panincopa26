@@ -78,11 +78,8 @@ const HeroSection = () => {
             Pré-Venda Exclusiva
           </div>
 
-          <p className="text-muted-foreground mb-2 text-[15px] leading-relaxed">
-            O maior evento do futebol mundial está chegando!
-          </p>
-          <p className="text-muted-foreground mb-5 text-[15px] leading-relaxed">
-            Garanta seu álbum de capa dura com 30, 60 ou 90 pacotes de figurinhas inclusos.
+          <p className="text-foreground/80 mb-5 text-[15px] leading-relaxed max-w-sm">
+            Reviva a emoção da Copa com o álbum oficial capa dura + até <span className="font-semibold text-primary">90 pacotes</span> de figurinhas. Edição limitada com frete grátis para todo o Brasil.
           </p>
           <div className="inline-flex items-center gap-2.5 px-5 py-2.5 rounded-full border border-primary/20 bg-gradient-to-r from-primary/5 to-accent/10" style={{ boxShadow: "var(--shadow-card)" }}>
             <span className="flex h-2 w-2 relative">
