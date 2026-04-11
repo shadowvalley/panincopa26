@@ -100,7 +100,7 @@ export default {
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
-        "pulse-glow": "pulse-glow 2s infinite",
+        "pulse-glow": "pulse-glow 3s ease-in-out infinite",
         "count-down": "count-down 0.3s ease-out",
         "shimmer": "shimmer 3s linear infinite",
       },
