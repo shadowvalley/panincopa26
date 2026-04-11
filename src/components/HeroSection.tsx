@@ -89,7 +89,7 @@ const HeroSection = () => {
               <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-destructive opacity-75" />
               <span className="relative inline-flex rounded-full h-2 w-2 bg-destructive" />
             </span>
-            <span className="text-sm font-semibold text-foreground tracking-tight">
+            <span className="text-xs font-semibold text-foreground tracking-tight whitespace-nowrap">
               Apenas <span className="text-primary font-bold">5.000</span> unidades disponíveis para o Brasil
             </span>
           </div>
