@@ -57,17 +57,15 @@ const Benefits = () => {
           ))}
         </div>
 
-        <div className="rounded-2xl border border-border bg-card/50 px-6 py-4" style={{ boxShadow: "var(--shadow-card)" }}>
-          <div className="flex items-center justify-center gap-5 flex-wrap">
-            {trustBadges.map((badge) => (
-              <span key={badge.text} className="flex items-center gap-2 text-xs font-semibold text-muted-foreground tracking-wide uppercase">
-                <span className="w-7 h-7 rounded-full bg-primary/10 flex items-center justify-center">
-                  <badge.icon className="w-3.5 h-3.5 text-primary" />
-                </span>
-                {badge.text}
-              </span>
-            ))}
-          </div>
+        <div className="flex items-center justify-center gap-8 flex-wrap pt-2">
+          {trustBadges.map((badge) => (
+            <div key={badge.text} className="flex flex-col items-center gap-1.5">
+              <div className="w-10 h-10 rounded-full bg-primary/8 border border-primary/10 flex items-center justify-center">
+                <badge.icon className="w-4 h-4 text-primary" strokeWidth={1.5} />
+              </div>
+              <span className="text-[10px] font-semibold text-muted-foreground tracking-wide uppercase">{badge.text}</span>
+            </div>
+          ))}
         </div>
       </div>
     </section>
