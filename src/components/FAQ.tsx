@@ -20,7 +20,7 @@ const faqs = [
   },
   {
     q: "Quanto tempo demora a entrega?",
-    a: "O prazo de entrega é de 2 a 6 dias úteis. O frete é grátis para todo o Brasil.",
+    a: "O prazo de entrega é de 7 a 11 dias úteis. O frete é grátis para todo o Brasil.",
   },
   {
     q: "Posso trocar figurinhas repetidas?",
