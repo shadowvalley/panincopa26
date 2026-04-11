@@ -53,7 +53,7 @@ const kits: Kit[] = [
     savings: "R$ 72,59",
     badge: "MELHOR CUSTO",
     image: kitColecionadorImg,
-    checkoutUrl: "https://paninnipagamento.shop",
+    checkoutUrl: "https://paninnipagamento.shop/checkout?product=e703d344-110e-11f1-b2a5-46da4690ad53",
   },
 ];
 
