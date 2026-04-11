@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { X } from "lucide-react";
+import { X, ShoppingBag } from "lucide-react";
 import { trackInitiateCheckout } from "@/lib/tracking";
 
 const FloatingCart = () => {
@@ -8,8 +8,8 @@ const FloatingCart = () => {
   const [dismissed, setDismissed] = useState(false);
 
   useEffect(() => {
+    if (dismissed) return;
     const handleScroll = () => {
-      if (dismissed) return;
       const kitsSection = document.getElementById("product-kits");
       if (kitsSection) {
         const rect = kitsSection.getBoundingClientRect();
@@ -20,39 +20,60 @@ const FloatingCart = () => {
     return () => window.removeEventListener("scroll", handleScroll);
   }, [dismissed]);
 
-  if (dismissed || !visible) return null;
-
   return (
     <AnimatePresence>
-      <motion.div
-        className="fixed bottom-0 left-0 right-0 z-50 px-4 py-3 flex items-center justify-between gap-3 backdrop-blur-md"
-        style={{ background: "var(--gradient-cta)", boxShadow: "0 -2px 24px hsla(220, 75%, 50%, 0.25)" }}
-        initial={{ y: 100 }}
-        animate={{ y: 0 }}
-        transition={{ type: "spring", stiffness: 200 }}
-      >
-        <div className="text-primary-foreground text-sm">
-          <span className="font-medium opacity-90">Kit Iniciante</span>
-          <span className="ml-2 font-bold">R$ 62,90</span>
-        </div>
-        <div className="flex items-center gap-2">
-          <a
-            href="https://checkout.paniniiacesso.shop/checkout?product=beb5ce76-110e-11f1-b2a5-46da4690ad53"
-            target="_blank"
-            rel="noopener noreferrer"
-            onClick={() => trackInitiateCheckout("Kit Iniciante", "R$ 62,90")}
-            className="bg-primary-foreground text-primary px-5 py-2 rounded-lg text-sm font-bold hover:opacity-90 transition-opacity"
+      {!dismissed && visible && (
+        <motion.div
+          className="fixed bottom-0 left-0 right-0 z-50"
+          initial={{ y: 100, opacity: 0 }}
+          animate={{ y: 0, opacity: 1 }}
+          exit={{ y: 100, opacity: 0 }}
+          transition={{ type: "spring", stiffness: 260, damping: 25 }}
+        >
+          {/* Top glow line */}
+          <div
+            className="h-px w-full"
+            style={{
+              background: "linear-gradient(90deg, transparent, hsl(var(--primary)/0.4), transparent)",
+            }}
+          />
+          <div
+            className="px-4 py-3.5 flex items-center justify-between gap-3 backdrop-blur-xl"
+            style={{
+              background: "linear-gradient(135deg, hsl(var(--primary)) 0%, hsl(var(--primary)/0.92) 100%)",
+              boxShadow: "0 -8px 32px -4px hsl(var(--primary)/0.3)",
+            }}
           >
-            COMPRAR
-          </a>
-          <button
-            onClick={() => setDismissed(true)}
-            className="text-primary-foreground/60 hover:text-primary-foreground transition-colors"
-          >
-            <X className="w-5 h-5" />
-          </button>
-        </div>
-      </motion.div>
+            <div className="flex items-center gap-3 text-primary-foreground">
+              <div className="w-9 h-9 rounded-full bg-primary-foreground/15 flex items-center justify-center flex-shrink-0">
+                <ShoppingBag className="w-4 h-4" />
+              </div>
+              <div className="flex flex-col leading-tight">
+                <span className="text-xs font-medium opacity-80">Kit Iniciante</span>
+                <span className="text-base font-bold tracking-tight">R$ 62,90</span>
+              </div>
+            </div>
+            <div className="flex items-center gap-2.5">
+              <a
+                href="https://checkout.paniniiacesso.shop/checkout?product=beb5ce76-110e-11f1-b2a5-46da4690ad53"
+                target="_blank"
+                rel="noopener noreferrer"
+                onClick={() => trackInitiateCheckout("Kit Iniciante", "R$ 62,90")}
+                className="bg-primary-foreground text-primary px-6 py-2.5 rounded-full text-sm font-bold tracking-wide hover:scale-105 active:scale-95 transition-all duration-200 shadow-lg"
+              >
+                COMPRAR
+              </a>
+              <button
+                onClick={() => setDismissed(true)}
+                className="w-8 h-8 rounded-full bg-primary-foreground/10 flex items-center justify-center text-primary-foreground/60 hover:text-primary-foreground hover:bg-primary-foreground/20 transition-all"
+                aria-label="Fechar"
+              >
+                <X className="w-4 h-4" />
+              </button>
+            </div>
+          </div>
+        </motion.div>
+      )}
     </AnimatePresence>
   );
 };
