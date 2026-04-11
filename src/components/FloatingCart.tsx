@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { X, ShoppingBag } from "lucide-react";
-import { trackInitiateCheckout } from "@/lib/tracking";
+import { trackInitiateCheckout, appendUtmParams } from "@/lib/tracking";
 
 const FloatingCart = () => {
   const [visible, setVisible] = useState(false);

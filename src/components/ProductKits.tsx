@@ -1,5 +1,5 @@
 import { Truck } from "lucide-react";
-import { trackInitiateCheckout } from "@/lib/tracking";
+import { trackInitiateCheckout, appendUtmParams } from "@/lib/tracking";
 import kitInicianteImg from "@/assets/kit-iniciante.jpeg";
 import kitCampeaoImg from "@/assets/kit-campeao.jpeg";
 import kitColecionadorImg from "@/assets/kit-colecionador.jpeg";
