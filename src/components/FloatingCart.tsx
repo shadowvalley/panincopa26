@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { X, ShoppingBag } from "lucide-react";
-import { trackInitiateCheckout } from "@/lib/tracking";
+import { trackInitiateCheckout, appendUtmParams } from "@/lib/tracking";
 
 const FloatingCart = () => {
   const [visible, setVisible] = useState(false);
@@ -55,7 +55,7 @@ const FloatingCart = () => {
             </div>
             <div className="flex items-center gap-2.5">
               <a
-                href="https://paninnipagamento.shop"
+                href={appendUtmParams("https://paninnipagamento.shop")}
                 target="_blank"
                 rel="noopener noreferrer"
                 onClick={() => trackInitiateCheckout("Kit Iniciante", "R$ 62,90")}

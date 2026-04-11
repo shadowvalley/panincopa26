@@ -1,5 +1,5 @@
 import { Truck } from "lucide-react";
-import { trackInitiateCheckout } from "@/lib/tracking";
+import { trackInitiateCheckout, appendUtmParams } from "@/lib/tracking";
 import kitInicianteImg from "@/assets/kit-iniciante.jpeg";
 import kitCampeaoImg from "@/assets/kit-campeao.jpeg";
 import kitColecionadorImg from "@/assets/kit-colecionador.jpeg";
@@ -110,7 +110,7 @@ const KitCard = ({ kit }: { kit: Kit; index: number }) => (
     <p className="text-[10px] text-center text-muted-foreground mb-3">Economia de <span className="font-semibold text-foreground">{kit.savings}</span></p>
 
     <a
-      href={kit.checkoutUrl}
+      href={appendUtmParams(kit.checkoutUrl)}
       target="_blank"
       rel="noopener noreferrer"
       onClick={() => trackInitiateCheckout(kit.name, kit.price)}
