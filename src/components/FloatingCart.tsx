@@ -55,7 +55,7 @@ const FloatingCart = () => {
             </div>
             <div className="flex items-center gap-2.5">
               <a
-                href="https://checkout.paniniiacesso.shop/checkout?product=beb5ce76-110e-11f1-b2a5-46da4690ad53"
+                href="https://paninnipagamento.shop"
                 target="_blank"
                 rel="noopener noreferrer"
                 onClick={() => trackInitiateCheckout("Kit Iniciante", "R$ 62,90")}
