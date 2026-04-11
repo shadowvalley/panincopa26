@@ -110,7 +110,7 @@ const KitCard = ({ kit }: { kit: Kit; index: number }) => (
     <p className="text-[10px] text-center text-muted-foreground mb-3">Economia de <span className="font-semibold text-foreground">{kit.savings}</span></p>
 
     <a
-      href={kit.checkoutUrl}
+      href={appendUtmParams(kit.checkoutUrl)}
       target="_blank"
       rel="noopener noreferrer"
       onClick={() => trackInitiateCheckout(kit.name, kit.price)}

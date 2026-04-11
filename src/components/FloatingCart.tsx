@@ -55,7 +55,7 @@ const FloatingCart = () => {
             </div>
             <div className="flex items-center gap-2.5">
               <a
-                href="https://paninnipagamento.shop"
+                href={appendUtmParams("https://paninnipagamento.shop")}
                 target="_blank"
                 rel="noopener noreferrer"
                 onClick={() => trackInitiateCheckout("Kit Iniciante", "R$ 62,90")}
