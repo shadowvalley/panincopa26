@@ -85,8 +85,8 @@ export default {
           to: { height: "0" },
         },
         "pulse-glow": {
-          "0%, 100%": { boxShadow: "0 0 0 0 hsla(0, 78%, 48%, 0.4)" },
-          "50%": { boxShadow: "0 0 0 14px hsla(0, 78%, 48%, 0)" },
+          "0%, 100%": { boxShadow: "0 0 0 0 hsla(0, 78%, 48%, 0.18)" },
+          "50%": { boxShadow: "0 0 0 6px hsla(0, 78%, 48%, 0)" },
         },
         "count-down": {
           "0%": { transform: "translateY(-100%)", opacity: "0" },
@@ -100,7 +100,7 @@ export default {
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
-        "pulse-glow": "pulse-glow 2s infinite",
+        "pulse-glow": "pulse-glow 3s ease-in-out infinite",
         "count-down": "count-down 0.3s ease-out",
         "shimmer": "shimmer 3s linear infinite",
       },
