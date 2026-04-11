@@ -41,7 +41,7 @@ const kits: Kit[] = [
     badge: "MAIS VENDIDO",
     highlight: true,
     image: kitCampeaoImg,
-    checkoutUrl: "https://paninnipagamento.shop",
+    checkoutUrl: "https://paninnipagamento.shop/checkout?product=d1b65275-110e-11f1-b2a5-46da4690ad53",
   },
   {
     name: "Kit Colecionador",
