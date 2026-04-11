@@ -57,14 +57,12 @@ const Benefits = () => {
           ))}
         </div>
 
-        <div className="flex items-center justify-center gap-8 flex-wrap pt-2">
+        <div className="flex items-center justify-center gap-6 flex-wrap pt-2">
           {trustBadges.map((badge) => (
-            <div key={badge.text} className="flex flex-col items-center gap-1.5">
-              <div className="w-10 h-10 rounded-full bg-primary/8 border border-primary/10 flex items-center justify-center">
-                <badge.icon className="w-4 h-4 text-primary" strokeWidth={1.5} />
-              </div>
-              <span className="text-[10px] font-semibold text-muted-foreground tracking-wide uppercase">{badge.text}</span>
-            </div>
+            <span key={badge.text} className="inline-flex items-center gap-1.5 text-sm font-medium text-muted-foreground">
+              <badge.icon className="w-4 h-4" strokeWidth={1.5} />
+              {badge.text}
+            </span>
           ))}
         </div>
       </div>
