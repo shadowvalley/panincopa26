@@ -41,15 +41,37 @@ const ProductFeatures = () => {
           ))}
         </div>
 
-        <div className="bg-card rounded-2xl p-7 border border-border" style={{ boxShadow: "var(--shadow-card)" }}>
-          <h3 className="text-xl font-display mb-5 tracking-tight">Edição Histórica</h3>
-          <div className="space-y-4">
-            {highlights.map((h) => (
-              <div key={h.title} className="flex gap-4 items-start">
-                <div className="w-1 h-full min-h-[40px] rounded-full bg-primary/30 shrink-0" />
+        <div
+          className="rounded-2xl p-7 border relative overflow-hidden"
+          style={{
+            background: "linear-gradient(135deg, hsl(var(--card)) 0%, hsl(var(--primary)/0.03) 100%)",
+            borderColor: "hsl(var(--primary)/0.12)",
+            boxShadow: "var(--shadow-card)",
+          }}
+        >
+          {/* Decorative corner accent */}
+          <div className="absolute top-0 right-0 w-24 h-24 opacity-[0.06]" style={{
+            background: "radial-gradient(circle at top right, hsl(var(--primary)), transparent 70%)",
+          }} />
+
+          <div className="flex items-center gap-3 mb-6">
+            <div className="w-1 h-7 rounded-full bg-primary" />
+            <h3 className="text-xl font-display tracking-tight text-foreground">Edição Histórica</h3>
+          </div>
+
+          <div className="space-y-5">
+            {highlights.map((h, i) => (
+              <div
+                key={h.title}
+                className="flex gap-4 items-start pl-4 relative"
+              >
+                <div
+                  className="absolute left-0 top-1 w-[3px] rounded-full bg-gradient-to-b from-primary/60 to-primary/15"
+                  style={{ height: "calc(100% - 4px)" }}
+                />
                 <div>
-                  <p className="text-sm font-semibold text-foreground">{h.title}</p>
-                  <p className="text-sm text-muted-foreground leading-relaxed mt-0.5">{h.desc}</p>
+                  <p className="text-sm font-display font-bold text-foreground tracking-tight">{h.title}</p>
+                  <p className="text-[13px] text-muted-foreground leading-relaxed mt-1">{h.desc}</p>
                 </div>
               </div>
             ))}
