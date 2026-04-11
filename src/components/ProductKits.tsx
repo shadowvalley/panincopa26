@@ -92,13 +92,19 @@ const KitCard = ({ kit }: { kit: Kit; index: number }) => (
       Álbum Capa Dura + <span className="font-medium text-foreground">{kit.packs} Pacotes</span> ({kit.stickers} figurinhas)
     </p>
 
-    <div className="text-center mb-4 rounded-lg py-3 px-3 border border-border/50">
-      <div className="flex items-center justify-center gap-2 mb-1">
-        <span className="text-xs font-body text-muted-foreground line-through">{kit.originalPrice}</span>
-        <span className="text-[10px] font-semibold text-destructive bg-destructive/10 px-1.5 py-0.5 rounded">{kit.discount}</span>
+    <div
+      className="text-center mb-4 rounded-xl py-4 px-4 relative overflow-hidden"
+      style={{
+        background: "linear-gradient(135deg, hsl(var(--primary)/0.04) 0%, hsl(var(--primary)/0.08) 100%)",
+        border: "1px solid hsl(var(--primary)/0.12)",
+      }}
+    >
+      <div className="flex items-center justify-center gap-2.5 mb-1.5">
+        <span className="text-xs font-body text-muted-foreground line-through decoration-destructive/60">{kit.originalPrice}</span>
+        <span className="text-[10px] font-bold text-primary-foreground bg-primary px-2 py-0.5 rounded-full tracking-wide">{kit.discount}</span>
       </div>
-      <p className="text-2xl font-bold text-primary font-display tracking-tight">{kit.price}</p>
-      <p className="text-[10px] font-body text-muted-foreground mt-0.5 tracking-wide">à vista no PIX</p>
+      <p className="text-3xl font-bold text-primary font-display tracking-tighter leading-none">{kit.price}</p>
+      <p className="text-[11px] font-medium text-muted-foreground mt-1.5 tracking-wide">à vista no PIX</p>
     </div>
 
     <p className="text-[10px] text-center text-muted-foreground mb-3">Economia de <span className="font-semibold text-foreground">{kit.savings}</span></p>
