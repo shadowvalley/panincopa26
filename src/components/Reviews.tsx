@@ -60,7 +60,7 @@ const Reviews = () => {
 
         <div className="flex flex-col md:flex-row items-center gap-8 mb-10 max-w-3xl mx-auto">
           <div className="text-center">
-            <p className="text-5xl font-body font-bold text-foreground tracking-tight">4.9</p>
+            <p className="text-5xl font-body font-bold text-foreground tracking-tight">4.7</p>
             <div className="flex gap-0.5 justify-center my-2">
               {[...Array(5)].map((_, i) => (
                 <Star key={i} className="w-5 h-5 fill-gold text-gold" />
