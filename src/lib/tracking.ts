@@ -33,18 +33,3 @@ export const trackViewContent = (contentName: string) => {
 export const trackLead = () => {
   trackEvent("Lead");
 };
-
-export const appendUtmParams = (url: string): string => {
-  try {
-    const currentParams = new URLSearchParams(window.location.search);
-    const targetUrl = new URL(url);
-    currentParams.forEach((value, key) => {
-      if (key.toLowerCase().startsWith("utm_")) {
-        targetUrl.searchParams.set(key, value);
-      }
-    });
-    return targetUrl.toString();
-  } catch {
-    return url;
-  }
-};
