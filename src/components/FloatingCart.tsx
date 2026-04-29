@@ -50,7 +50,7 @@ const FloatingCart = () => {
               </div>
               <div className="flex flex-col leading-tight">
                 <span className="text-xs font-medium opacity-80">Kit Iniciante</span>
-                <span className="text-base font-bold tracking-tight">R$ 62,90</span>
+                <span className="text-base font-bold tracking-tight">R$ 34,90</span>
               </div>
             </div>
             <div className="flex items-center gap-2.5">
