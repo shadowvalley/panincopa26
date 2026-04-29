@@ -14,6 +14,7 @@ interface Kit {
   savings: string;
   badge?: string;
   highlight?: boolean;
+  albumType: string;
   image: string;
   checkoutUrl: string;
 }
@@ -23,35 +24,38 @@ const kits: Kit[] = [
     name: "Kit Iniciante",
     packs: 30,
     stickers: 150,
-    originalPrice: "R$ 95,61",
-    price: "R$ 62,90",
+    originalPrice: "R$ 56,29",
+    price: "R$ 34,90",
     discount: "-38%",
-    savings: "R$ 36,34",
+    savings: "R$ 21,39",
+    albumType: "Capa Mole",
     image: kitInicianteImg,
     checkoutUrl: "https://checkout.paniniiacesso.shop/checkout?product=beb5ce76-110e-11f1-b2a5-46da4690ad53",
   },
   {
     name: "Kit Campeão",
-    packs: 60,
-    stickers: 300,
-    originalPrice: "R$ 155,18",
-    price: "R$ 87,90",
+    packs: 50,
+    stickers: 250,
+    originalPrice: "R$ 72,42",
+    price: "R$ 44,90",
     discount: "-38%",
-    savings: "R$ 58,97",
+    savings: "R$ 27,52",
     badge: "MAIS VENDIDO",
     highlight: true,
+    albumType: "Capa Dura",
     image: kitCampeaoImg,
     checkoutUrl: "https://checkout.paniniiacesso.shop/checkout?product=d1b65275-110e-11f1-b2a5-46da4690ad53",
   },
   {
     name: "Kit Colecionador",
-    packs: 90,
-    stickers: 450,
-    originalPrice: "R$ 191,01",
-    price: "R$ 102,90",
+    packs: 80,
+    stickers: 400,
+    originalPrice: "R$ 88,55",
+    price: "R$ 54,90",
     discount: "-38%",
-    savings: "R$ 72,59",
+    savings: "R$ 33,65",
     badge: "MELHOR CUSTO",
+    albumType: "Capa Dura + Capa Mole",
     image: kitColecionadorImg,
     checkoutUrl: "https://checkout.paniniiacesso.shop/checkout?product=e703d344-110e-11f1-b2a5-46da4690ad53",
   },
@@ -89,7 +93,7 @@ const KitCard = ({ kit }: { kit: Kit; index: number }) => (
 
     <h3 className="text-base font-display font-semibold text-center mb-1 tracking-tight text-foreground">{kit.name}</h3>
     <p className="text-[11px] font-body text-muted-foreground text-center mb-4 tracking-wide">
-      Álbum Capa Dura + <span className="font-medium text-foreground">{kit.packs} Pacotes</span> ({kit.stickers} figurinhas)
+      Álbum {kit.albumType} + <span className="font-medium text-foreground">{kit.packs} Pacotes</span> ({kit.stickers} figurinhas)
     </p>
 
     <div

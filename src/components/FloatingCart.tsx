@@ -50,7 +50,7 @@ const FloatingCart = () => {
               </div>
               <div className="flex flex-col leading-tight">
                 <span className="text-xs font-medium opacity-80">Kit Iniciante</span>
-                <span className="text-base font-bold tracking-tight">R$ 62,90</span>
+                <span className="text-base font-bold tracking-tight">R$ 34,90</span>
               </div>
             </div>
             <div className="flex items-center gap-2.5">
@@ -58,7 +58,7 @@ const FloatingCart = () => {
                 href={appendUtmParams("https://checkout.paniniiacesso.shop/checkout?product=beb5ce76-110e-11f1-b2a5-46da4690ad53")}
                 target="_blank"
                 rel="noopener noreferrer"
-                onClick={() => trackInitiateCheckout("Kit Iniciante", "R$ 62,90")}
+                onClick={() => trackInitiateCheckout("Kit Iniciante", "R$ 34,90")}
                 className="bg-primary-foreground text-primary px-6 py-2.5 rounded-full text-sm font-bold tracking-wide hover:scale-105 active:scale-95 transition-all duration-200 shadow-lg"
               >
                 COMPRAR
