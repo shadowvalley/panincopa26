@@ -14,6 +14,7 @@ interface Kit {
   savings: string;
   badge?: string;
   highlight?: boolean;
+  albumType: string;
   image: string;
   checkoutUrl: string;
 }
