@@ -93,7 +93,7 @@ const KitCard = ({ kit }: { kit: Kit; index: number }) => (
 
     <h3 className="text-base font-display font-semibold text-center mb-1 tracking-tight text-foreground">{kit.name}</h3>
     <p className="text-[11px] font-body text-muted-foreground text-center mb-4 tracking-wide">
-      Álbum Capa Dura + <span className="font-medium text-foreground">{kit.packs} Pacotes</span> ({kit.stickers} figurinhas)
+      Álbum {kit.albumType} + <span className="font-medium text-foreground">{kit.packs} Pacotes</span> ({kit.stickers} figurinhas)
     </p>
 
     <div
