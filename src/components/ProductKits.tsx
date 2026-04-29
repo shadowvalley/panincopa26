@@ -1,5 +1,5 @@
 import { Truck } from "lucide-react";
-import { trackInitiateCheckout } from "@/lib/tracking";
+import { trackInitiateCheckout, appendUtmParams } from "@/lib/tracking";
 import kitInicianteImg from "@/assets/kit-iniciante.jpeg";
 import kitCampeaoImg from "@/assets/kit-campeao.jpeg";
 import kitColecionadorImg from "@/assets/kit-colecionador.jpeg";
@@ -28,7 +28,7 @@ const kits: Kit[] = [
     discount: "-38%",
     savings: "R$ 36,34",
     image: kitInicianteImg,
-    checkoutUrl: "https://paninnipagamento.shop",
+    checkoutUrl: "https://checkout.paniniiacesso.shop/checkout?product=beb5ce76-110e-11f1-b2a5-46da4690ad53",
   },
   {
     name: "Kit Campeão",
@@ -41,7 +41,7 @@ const kits: Kit[] = [
     badge: "MAIS VENDIDO",
     highlight: true,
     image: kitCampeaoImg,
-    checkoutUrl: "https://paninnipagamento.shop/checkout?product=d1b65275-110e-11f1-b2a5-46da4690ad53",
+    checkoutUrl: "https://checkout.paniniiacesso.shop/checkout?product=d1b65275-110e-11f1-b2a5-46da4690ad53",
   },
   {
     name: "Kit Colecionador",
@@ -53,7 +53,7 @@ const kits: Kit[] = [
     savings: "R$ 72,59",
     badge: "MELHOR CUSTO",
     image: kitColecionadorImg,
-    checkoutUrl: "https://paninnipagamento.shop/checkout?product=e703d344-110e-11f1-b2a5-46da4690ad53",
+    checkoutUrl: "https://checkout.paniniiacesso.shop/checkout?product=e703d344-110e-11f1-b2a5-46da4690ad53",
   },
 ];
 
@@ -110,7 +110,7 @@ const KitCard = ({ kit }: { kit: Kit; index: number }) => (
     <p className="text-[10px] text-center text-muted-foreground mb-3">Economia de <span className="font-semibold text-foreground">{kit.savings}</span></p>
 
     <a
-      href={kit.checkoutUrl}
+      href={appendUtmParams(kit.checkoutUrl)}
       target="_blank"
       rel="noopener noreferrer"
       onClick={() => trackInitiateCheckout(kit.name, kit.price)}
