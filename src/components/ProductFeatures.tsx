@@ -15,14 +15,17 @@ const highlights = [
 
 const ProductFeatures = () => {
   return (
-    <section className="py-16 px-4 bg-muted/40">
+    <section className="py-20 px-4 bg-muted/40 border-y border-border/60">
       <div className="max-w-3xl mx-auto">
-        <h2 className="text-3xl md:text-4xl font-display text-center mb-2 tracking-tight">
-          Sobre o Álbum
-        </h2>
-        <p className="text-center text-muted-foreground text-sm mb-12 max-w-lg mx-auto leading-relaxed">
-          A edição mais completa já produzida, com mais de 700 figurinhas colecionáveis.
-        </p>
+        <div className="text-center mb-12">
+          <span className="eyebrow mb-3">Sobre o produto</span>
+          <h2 className="text-3xl md:text-4xl font-display tracking-tight mt-2 mb-3">
+            O Álbum Oficial
+          </h2>
+          <p className="text-muted-foreground text-[15px] max-w-lg mx-auto leading-relaxed">
+            A edição mais completa já produzida pela Panini, com mais de 700 figurinhas colecionáveis.
+          </p>
+        </div>
 
         <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-12">
           {stats.map((stat) => (

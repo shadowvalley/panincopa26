@@ -15,18 +15,15 @@ const trustBadges = [
 
 const Benefits = () => {
   return (
-    <section className="py-16 px-4">
+    <section className="py-20 px-4">
       <div className="max-w-3xl mx-auto">
-        <div className="text-center mb-10">
-          <span className="inline-flex items-center gap-1.5 text-xs font-semibold text-primary tracking-[0.2em] uppercase mb-3">
-            <CheckCircle2 className="w-3.5 h-3.5" />
-            Vantagens exclusivas
-          </span>
-          <h2 className="text-3xl md:text-4xl font-display text-center mb-2 tracking-tight">
+        <div className="text-center mb-12">
+          <span className="eyebrow mb-3">Vantagens exclusivas</span>
+          <h2 className="text-3xl md:text-4xl font-display tracking-tight mt-2 mb-3">
             Por Que Comprar na Pré-Venda
           </h2>
-          <p className="text-center text-muted-foreground text-sm max-w-md mx-auto leading-relaxed">
-            Preço exclusivo significativamente menor do que a compra avulsa na banca.
+          <p className="text-muted-foreground text-[15px] max-w-md mx-auto leading-relaxed">
+            Preço exclusivo, frete grátis e entrega prioritária — antes do produto chegar às bancas.
           </p>
         </div>
 

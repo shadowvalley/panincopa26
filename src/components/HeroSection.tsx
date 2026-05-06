@@ -29,68 +29,56 @@ const HeroSection = () => {
   );
 
   return (
-    <section className="pt-12 pb-16 px-4 relative overflow-hidden" style={{ background: "var(--gradient-surface)" }}>
-      {/* Football-themed background details */}
-      <div className="absolute inset-0 pointer-events-none overflow-hidden">
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] rounded-full border-2 border-primary/[0.08]" />
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-4 h-4 rounded-full bg-primary/[0.08]" />
-        <div className="absolute -top-12 -right-12 w-32 h-32 rounded-full border-2 border-primary/[0.12]" />
-        <div className="absolute -top-12 -left-12 w-32 h-32 rounded-full border-2 border-primary/[0.12]" />
-        <div className="absolute -bottom-12 -right-12 w-32 h-32 rounded-full border-2 border-primary/[0.10]" />
-        <div className="absolute -bottom-12 -left-12 w-32 h-32 rounded-full border-2 border-primary/[0.10]" />
-        <div className="absolute top-0 left-1/2 w-px h-full bg-primary/[0.06]" />
-        <div className="absolute top-1/2 left-0 w-full h-px bg-primary/[0.06]" />
-        <div className="absolute -top-4 left-1/2 -translate-x-1/2 w-48 h-24 border-2 border-t-0 border-primary/[0.07] rounded-b-xl" />
-        <div className="absolute -bottom-4 left-1/2 -translate-x-1/2 w-48 h-24 border-2 border-b-0 border-primary/[0.07] rounded-t-xl" />
+    <section className="pt-14 pb-20 px-4 relative overflow-hidden" style={{ background: "var(--gradient-surface)" }}>
+      {/* Sutil padrão de pontos para profundidade */}
+      <div className="absolute inset-0 pointer-events-none">
         <div
-          className="absolute inset-0 opacity-[0.04]"
+          className="absolute inset-0 opacity-[0.035]"
           style={{
-            backgroundImage: `radial-gradient(circle, hsl(var(--primary)) 1.2px, transparent 1.2px)`,
-            backgroundSize: "32px 32px",
+            backgroundImage: `radial-gradient(circle, hsl(var(--foreground)) 1px, transparent 1px)`,
+            backgroundSize: "28px 28px",
           }}
         />
+        <div className="absolute inset-x-0 bottom-0 h-32 bg-gradient-to-t from-background to-transparent" />
       </div>
-      <div className="max-w-2xl mx-auto text-center">
+
+      <div className="max-w-2xl mx-auto text-center relative">
         <img
           src={trophyImg}
-          alt="Troféu do campeonato"
+          alt="Troféu da Copa do Mundo"
           loading="eager"
           decoding="async"
-          className="w-24 mx-auto object-contain mb-6 drop-shadow-xl"
+          className="w-20 mx-auto object-contain mb-6 drop-shadow-md"
         />
 
         <div>
-          <p className="text-xs font-semibold text-primary tracking-[0.2em] uppercase mb-1">
-            Álbum Oficial de Coleção
-          </p>
-          <p className="text-xs text-muted-foreground mb-6">
-            EUA • Canadá • México
+          <span className="eyebrow mb-2">FIFA World Cup 26™ • Edição Oficial</span>
+          <p className="text-[11px] text-muted-foreground tracking-[0.18em] uppercase mb-6">
+            EUA  •  Canadá  •  México
           </p>
 
-          <h1 className="text-4xl md:text-5xl font-display leading-[1.1] mb-4 tracking-tight">
-            Álbum Colecionável
+          <h1 className="text-[34px] md:text-5xl font-display leading-[1.05] mb-5 tracking-tight text-foreground">
+            Álbum de Figurinhas
             <br />
             <span className="text-gradient-primary">Copa do Mundo 2026</span>
           </h1>
 
-          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 text-primary text-sm font-semibold mb-4">
-            <span className="w-2 h-2 rounded-full bg-primary animate-pulse" />
+          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-primary/[0.08] text-primary text-[12px] font-semibold mb-5 border border-primary/15">
+            <span className="w-1.5 h-1.5 rounded-full bg-primary animate-pulse" />
             Pré-Venda Exclusiva
           </div>
 
-          <p className="text-foreground/80 mb-3 text-[15px] leading-relaxed max-w-sm mx-auto">
-            O maior evento do futebol mundial está chegando!
+          <p className="text-foreground/75 mb-5 text-[15px] leading-relaxed max-w-md mx-auto">
+            Garanta o álbum oficial Panini com <span className="font-semibold text-foreground">30, 50 ou 80 pacotes</span> de figurinhas inclusos. Frete grátis para todo o Brasil.
           </p>
-          <p className="text-foreground/80 mb-5 text-[15px] leading-relaxed max-w-sm mx-auto">
-            Garanta seu álbum de capa dura com <span className="font-semibold text-primary">30, 50 ou 80 pacotes</span> de figurinhas inclusos.
-          </p>
-          <div className="inline-flex items-center gap-2.5 px-5 py-2.5 rounded-full border border-border/50 bg-white" style={{ boxShadow: "0 4px 20px -4px rgba(0,0,0,0.1)" }}>
+
+          <div className="inline-flex items-center gap-2.5 px-4 py-2 rounded-full border border-border bg-card shadow-sm">
             <span className="flex h-2 w-2 relative">
               <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-destructive opacity-75" />
               <span className="relative inline-flex rounded-full h-2 w-2 bg-destructive" />
             </span>
-            <span className="text-xs font-semibold text-foreground tracking-tight whitespace-nowrap">
-              Apenas <span className="text-primary font-bold">5.000</span> unidades disponíveis para o Brasil
+            <span className="text-[11px] font-semibold text-foreground tracking-tight whitespace-nowrap">
+              Apenas <span className="text-primary font-bold">5.000</span> unidades para o Brasil
             </span>
           </div>
         </div>

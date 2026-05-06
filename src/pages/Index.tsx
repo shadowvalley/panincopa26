@@ -1,4 +1,5 @@
 import { useEffect } from "react";
+import SiteHeader from "@/components/SiteHeader";
 import HeroSection from "@/components/HeroSection";
 import ProductKits from "@/components/ProductKits";
 import ProductFeatures from "@/components/ProductFeatures";
@@ -15,6 +16,7 @@ const Index = () => {
   }, []);
   return (
     <div className="min-h-screen bg-background">
+      <SiteHeader />
       <HeroSection />
       <ProductKits />
       <ProductFeatures />
