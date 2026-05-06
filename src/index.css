@@ -45,7 +45,7 @@
     --gold-light: 48 95% 68%;
 
     --gradient-hero: linear-gradient(160deg, hsl(220 30% 12%) 0%, hsl(210 35% 18%) 100%);
-    --gradient-cta: linear-gradient(135deg, hsl(0 78% 45%) 0%, hsl(0 72% 38%) 100%);
+    --gradient-cta: linear-gradient(135deg, hsl(0 78% 56%) 0%, hsl(0 78% 48%) 100%);
     --gradient-gold: linear-gradient(135deg, hsl(48 95% 52%) 0%, hsl(42 90% 45%) 100%);
     --gradient-urgency: linear-gradient(90deg, hsl(0 78% 45%) 0%, hsl(10 75% 50%) 100%);
     --gradient-surface: linear-gradient(180deg, hsl(48 80% 96%) 0%, hsl(48 50% 93%) 100%);
