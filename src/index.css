@@ -92,10 +92,19 @@
   }
 
   .text-gradient-primary {
-    background: linear-gradient(135deg, hsl(0 78% 48%), hsl(48 95% 52%));
+    background: linear-gradient(135deg, hsl(0 72% 50%) 0%, hsl(43 85% 48%) 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
+  }
+
+  .eyebrow {
+    @apply inline-block text-[11px] font-semibold tracking-[0.22em] uppercase text-primary;
+  }
+
+  .section-divider {
+    height: 1px;
+    background: linear-gradient(90deg, transparent, hsl(var(--border)), transparent);
   }
 }
 
