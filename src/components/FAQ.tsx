@@ -34,14 +34,11 @@ const faqs = [
 
 const FAQ = () => {
   return (
-    <section className="py-20 px-4">
+    <section className="py-16 px-4">
       <div className="max-w-2xl mx-auto">
-        <div className="text-center mb-10">
-          <span className="eyebrow mb-3">Tire suas dúvidas</span>
-          <h2 className="text-3xl md:text-4xl font-display tracking-tight mt-2">
-            Perguntas Frequentes
-          </h2>
-        </div>
+        <h2 className="text-3xl md:text-4xl font-display text-center mb-10 tracking-tight">
+          Perguntas Frequentes
+        </h2>
 
         <Accordion type="single" collapsible className="space-y-2">
           {faqs.map((faq, i) => (

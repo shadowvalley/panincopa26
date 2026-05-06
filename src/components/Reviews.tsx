@@ -54,12 +54,9 @@ const Reviews = () => {
   }, [emblaApi]);
 
   return (
-    <section className="py-20 px-4 bg-muted/40 border-y border-border/60">
+    <section className="py-16 px-4 bg-muted/40">
       <div className="max-w-5xl mx-auto">
-        <div className="text-center mb-10">
-          <span className="eyebrow mb-3">Quem comprou aprovou</span>
-          <h2 className="text-3xl md:text-4xl font-display tracking-tight mt-2">Avaliações de Clientes</h2>
-        </div>
+        <h2 className="text-2xl md:text-3xl font-body font-bold text-center mb-8 tracking-tight">Avaliações</h2>
 
         <div className="flex flex-col md:flex-row items-center gap-8 mb-10 max-w-3xl mx-auto">
           <div className="text-center">

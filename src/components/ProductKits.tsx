@@ -128,17 +128,14 @@ const KitCard = ({ kit }: { kit: Kit; index: number }) => (
 
 const ProductKits = () => {
   return (
-    <section id="product-kits" className="py-20 px-4">
+    <section id="product-kits" className="py-16 px-4">
       <div className="max-w-4xl mx-auto">
-        <div className="text-center mb-12">
-          <span className="eyebrow mb-3">Escolha sua coleção</span>
-          <h2 className="text-3xl md:text-4xl font-display tracking-tight mt-2 mb-3">
-            Kits de Pré-Venda
-          </h2>
-          <p className="text-muted-foreground max-w-lg mx-auto text-[15px] leading-relaxed">
-            Quanto mais pacotes, mais chances de completar o álbum. Todos os kits incluem álbum oficial e frete grátis.
-          </p>
-        </div>
+        <h2 className="text-3xl md:text-4xl font-display text-center mb-2 tracking-tight">
+          Escolha Seu Kit
+        </h2>
+        <p className="text-center text-muted-foreground mb-12 max-w-lg mx-auto text-sm leading-relaxed">
+          Quanto mais pacotes, mais chances de completar o álbum! Todos incluem álbum premium capa dura.
+        </p>
 
         <div className="grid md:grid-cols-3 gap-5">
           {kits.map((kit, i) => (
